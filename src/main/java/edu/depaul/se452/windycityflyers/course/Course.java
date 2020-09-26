@@ -1,7 +1,5 @@
 package edu.depaul.se452.windycityflyers.course;
 
-/*cool
- */
 
 import edu.depaul.se452.windycityflyers.student.Student;
 import lombok.Data;
