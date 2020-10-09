@@ -15,3 +15,16 @@ UPDATE course_students set course_id = (select id from course where num=452);
 
 INSERT INTO course_students(students_id) select id from students where stu_id like '222%';
 UPDATE course_students set course_id =( select id from course where num=352) where course_id is null;
+
+INSERT INTO PAYMENT (id, payment_type, amount, card_num, cust_name, cust_id) VALUES
+            (1, 'Debit', 123.12, 123456789, 'Bryan Harris', 12),
+            (2, 'Credit', 23.00, 1290830921, 'Michael Jordan', 23),
+            (3, 'Debit', 50.20, 21321321, 'Nick Foles', 13)
+
+INSERT INTO store(id, store_name, street_address, city, state, zip) VALUES
+            (1, 'Walmart', '123 Main Street', 'Chicago','IL', 23452),
+            (2, 'Target', '234 Bears Avenue', 'Chicago','IL', 23436)
+
+-- INSERT INTO aisle(id, num, dept_id) VALUES
+--             (1, 3, 4),
+--             (2, 2, 4)
