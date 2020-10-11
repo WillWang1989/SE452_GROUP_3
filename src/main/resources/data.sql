@@ -1,8 +1,12 @@
-Insert Into Runner (name, phone) VALUES
+INSERT INTO Runner (name, phone) VALUES
             ('Roxxy Andrews', 3122241234),
             ('RuPaul Charles', 3122341234),
-            ('Bianca Del Rio', 7732241234),
+            ('Bianca Del Rio', 7732241234);
 
+INSERT INTO AccountProfiles (firstname, lastname, email, address, payment, phone) VALUES
+            ('Roxxy', 'Andrews', 'RoxxyDrag@aol.com', '1234 Main Street', '1236256554788956', 1235218475),
+            ('Ivy', 'Winters', 'IvyFrozen@aol.com', '1234 Main Street', '1236256554788956', 1235218475),
+            ('Shangela', 'Wodley', 'ShangelaHaleloo@aol.com', '1234 Main Street', '1236256554788956', 1235218475);
 
 INSERT INTO students (stu_id, nm, email) VALUES
             ('11101', 'Sheena Wyre', 'swyre0@un.org'),
