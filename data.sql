@@ -4,7 +4,7 @@ INSERT INTO Runner (name, phone) VALUES
             ('Bianca Del Rio', 7732241234);
 INSERT INTO Department (name) VALUES
             ('Protein'),
-            ('Diary'),
+            ('Dairy'),
             ('Fruit'),
             ('Vegetables'),
             ('Grains');
@@ -13,11 +13,6 @@ INSERT INTO AccountProfiles (firstname, lastname, email, address, payment, phone
             ('Roxxy', 'Andrews', 'RoxxyDrag@aol.com', '1234 Main Street', '1236256554788956', 1235218475),
             ('Ivy', 'Winters', 'IvyFrozen@aol.com', '1234 Main Street', '1236256554788956', 1235218475),
             ('Shangela', 'Wodley', 'ShangelaHaleloo@aol.com', '1234 Main Street', '1236256554788956', 1235218475);
-
-INSERT INTO Inventory (id, name, quantity, brand, availability) VALUES
-            (1, peanut butter, 12, Skippy, 5),
-            (2, peanut butter, 9, Jif, 8),
-            (3, mustard, 23, Heinz, 9);
 
 INSERT INTO students (stu_id, nm, email) VALUES
             ('11101', 'Sheena Wyre', 'swyre0@un.org'),
@@ -49,3 +44,15 @@ INSERT INTO store(id, store_name, street_address, city, state, zip) VALUES
 -- INSERT INTO aisle(id, num, dept_id) VALUES
 --             (1, 3, 4),
 --             (2, 2, 4)
+INSERT INTO product(product_brand, ,product_name, product_description, dept, price) VALUES
+            ('Skippy', 'Peanut Butter', 'smooth peanut butter', 'Protein', 5.99),
+            ('Perdue', 'Chicken Breast', 'organic', 'Protein', 7.99),
+            ('Fuji', 'Apple', 'large', 'Fruit', 2.99),
+            ('Green Giant', 'Broccoli', 'florets', 'Vegetables', 1.99),
+            ('Jewel', 'Milk', 'whole', 'Dairy', 1.99)
+
+INSERT INTO admin(user_name, name) VALUES
+            ('jsmith', 'John Smith'),
+            ('jdoe', 'Jane Doe'),
+            ('dmill','David Miller'),
+            ('ssanders', 'Sarah Sanders')
