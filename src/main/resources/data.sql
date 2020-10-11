@@ -8,6 +8,11 @@ INSERT INTO AccountProfiles (firstname, lastname, email, address, payment, phone
             ('Ivy', 'Winters', 'IvyFrozen@aol.com', '1234 Main Street', '1236256554788956', 1235218475),
             ('Shangela', 'Wodley', 'ShangelaHaleloo@aol.com', '1234 Main Street', '1236256554788956', 1235218475);
 
+INSERT INTO Inventory (id, name, quantity, brand, availability) VALUES
+            (1, peanut butter, 12, Skippy, 5),
+            (2, peanut butter, 9, Jif, 8),
+            (3, mustard, 23, Heinz, 9);
+
 INSERT INTO students (stu_id, nm, email) VALUES
             ('11101', 'Sheena Wyre', 'swyre0@un.org'),
             ('11100', 'Dilly Caffery', 'dcaffery1@blogspot.com'),
