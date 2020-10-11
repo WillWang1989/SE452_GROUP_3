@@ -2,6 +2,12 @@ INSERT INTO Runner (name, phone) VALUES
             ('Roxxy Andrews', 3122241234),
             ('RuPaul Charles', 3122341234),
             ('Bianca Del Rio', 7732241234);
+INSERT INTO Department (name) VALUES
+            ('Protein'),
+            ('Diary'),
+            ('Fruit'),
+            ('Vegetables'),
+            ('Grains');
 
 INSERT INTO AccountProfiles (firstname, lastname, email, address, payment, phone) VALUES
             ('Roxxy', 'Andrews', 'RoxxyDrag@aol.com', '1234 Main Street', '1236256554788956', 1235218475),
