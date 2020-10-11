@@ -1,3 +1,9 @@
+Insert Into Runner (name, phone) VALUES
+            ('Roxxy Andrews', 3122241234),
+            ('RuPaul Charles', 3122341234),
+            ('Bianca Del Rio', 7732241234),
+
+
 INSERT INTO students (stu_id, nm, email) VALUES
             ('11101', 'Sheena Wyre', 'swyre0@un.org'),
             ('11100', 'Dilly Caffery', 'dcaffery1@blogspot.com'),
