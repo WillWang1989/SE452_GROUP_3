@@ -1,3 +1,7 @@
+tips for git:
+
+always run 'git pull' before 'git commit' to avoid code conflicts, especailly when changing data.sql and schema-*.sql file,
+
 
 the code contains 4 parts:
 	1.data/entity classes with relations and put them in `model` package

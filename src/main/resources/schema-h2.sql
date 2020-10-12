@@ -44,7 +44,7 @@ CREATE TABLE payment (
 );
 
 CREATE TABLE store (
-  id INT,
+    id INT,
     store_name VARCHAR(30),
     street_address VARCHAR(150),
     city VARCHAR(50),
@@ -64,15 +64,15 @@ CREATE TABLE department(
     id INT
 );
 CREATE TABLE product (
-                         id INT AUTO_INCREMENT,
-                         product_brand long,
-                         product_name long,
-                         product_description long,
-                         dept long,
-                         price float
+     id INT AUTO_INCREMENT,
+     product_brand long,
+     product_name long,
+     product_description long,
+     dept long,
+     price float
 );
 CREATE TABLE admin (
-                       id INT AUTO_INCREMENT,
-                       username long,
-                       name long
+    id INT AUTO_INCREMENT,
+    username long,
+    name long
 );

@@ -15,6 +15,7 @@ public class OrderProducts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "order_id")
     private long orderId;
     private long productId;
     private int count;
