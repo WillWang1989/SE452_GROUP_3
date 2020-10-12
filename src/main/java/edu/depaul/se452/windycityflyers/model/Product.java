@@ -1,4 +1,4 @@
-package Model.Products;
+package edu.depaul.se452.windycityflyers.model;
 
 import lombok.Data;
 

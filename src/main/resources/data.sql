@@ -4,7 +4,7 @@ INSERT INTO Runner (name, phone) VALUES
             ('Bianca Del Rio', 7732241234);
 INSERT INTO Department (name) VALUES
             ('Protein'),
-            ('Diary'),
+            ('Dairy'),
             ('Fruit'),
             ('Vegetables'),
             ('Grains');
@@ -49,3 +49,16 @@ INSERT INTO store(id, store_name, street_address, city, state, zip) VALUES
 -- INSERT INTO aisle(id, num, dept_id) VALUES
 --             (1, 3, 4),
 --             (2, 2, 4)
+
+INSERT INTO product(product_brand, ,product_name, product_description, dept, price) VALUES
+            ('Skippy', 'Peanut Butter', 'smooth peanut butter', 'Protein', 5.99),
+            ('Perdue', 'Chicken Breast', 'organic', 'Protein', 7.99),
+            ('Fuji', 'Apple', 'large', 'Fruit', 2.99),
+            ('Green Giant', 'Broccoli', 'florets', 'Vegetables', 1.99),
+            ('Jewel', 'Milk', 'whole', 'Dairy', 1.99)
+
+INSERT INTO admin(user_name, name) VALUES
+            ('jsmith', 'John Smith'),
+            ('jdoe', 'Jane Doe'),
+            ('dmill','David Miller'),
+            ('ssanders', 'Sarah Sanders')

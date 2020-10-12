@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import edu.depaul.se452.windycityflyers.repository.*;
 
 import java.util.Optional;
 
@@ -74,6 +75,18 @@ public class WindycityflyersApplication {
 			// Student student = new Student();
 			repository.save(updateStudent);
 			log.info("After James: " + repository.count());
+		};
+	}
+	@Bean
+	public CommandLineRunner showProduct(ProductRepository repository) {
+		return (args) -> {
+			// fetch all Students
+			log.info("Students found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((product) -> {
+				log.info(product.toString());
+			});
+			log.info("-------------------------------");
 		};
 	}
 

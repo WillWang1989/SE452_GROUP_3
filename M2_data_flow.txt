@@ -1,0 +1,32 @@
+
+the code contains 4 parts:
+	1.data/entity classes with relations and put them in `model` package
+	2.sql statements that create responding tables from #1 and put them in schema.sql)
+	3.add some data via sql statements and put them in data.sql, for nosql data initialization
+	4. create repository classes and put them in `repository` package(Optional ?)
+
+
+order_status:
+	pending_payment
+	paid/confirmed
+	picked up & delivering
+	delivered
+	
+
+new table: order_product
+	eg:
+	product_A  		2
+	product_B		3
+	product_C		1
+	items of product
+	
+
+	
+
+
+product-> shopping chart -> order, shopping chart should be (relational sql) not nosql
+
+admin-> CRUD stores
+
+admin-> CRUD product, each product belongs to a store
+
