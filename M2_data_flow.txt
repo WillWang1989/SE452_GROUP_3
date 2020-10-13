@@ -1,6 +1,6 @@
 tips for git:
 
-always run 'git pull' before 'git commit' to avoid code conflicts, especially when changing data.sql and schema-*.sql file,
+always run 'git pull' before 'git commit' to avoid code conflicts, especially when changing data.sql, schema-*.sql and WindycityflyersApplications file,
 
 
 the code contains 4 parts:
