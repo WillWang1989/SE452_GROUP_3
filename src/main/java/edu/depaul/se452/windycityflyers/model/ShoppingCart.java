@@ -22,7 +22,7 @@ public class ShoppingCart {
     @MongoId
     private String id;
     private long userId;
-    // TODO: orderid in OrderProducts need be changed to shoppingcartid 
+    // TODO: orderid in OrderProducts need be changed to shoppingcartid
     private List<OrderProducts> items;
     private BigDecimal totalCost;
 }

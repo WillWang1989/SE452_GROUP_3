@@ -26,7 +26,7 @@ public class Order {
     private int orderStatus;
     //TODO: add relation to payment table
     private int paymentId;
-    //TODO: add relation to delevery table
+    //TODO: add relation to delivery table
     private int deliverId;
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)

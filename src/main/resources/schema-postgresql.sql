@@ -1,33 +1,12 @@
-DROP TABLE IF EXISTS course_students;
-DROP TABLE IF EXISTS students;
-DROP TABLE IF EXISTS course;
+
 DROP TABLE IF EXISTS custormer;
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS order_products;
+DROP TABLE  IF EXISTS department;
+DROP  TABLE IF EXISTS  product;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 
 CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
-
-CREATE TABLE students (
-  id serial  PRIMARY KEY,
-  stu_id VARCHAR(10),
-  nm VARCHAR(50),
-  email VARCHAR(50),
-  admitted_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE course (
-    id serial  PRIMARY KEY,
-    dept char(2),
-    num int
-);
-
-CREATE TABLE course_students (
-     id serial  PRIMARY KEY,
-     course_id int,
-     students_id int
-);
-
 
 
 CREATE TABLE custormer (
@@ -56,4 +35,17 @@ CREATE  TABLE  order_products (
     orderId serial,
     productId serial,
     count INTEGER
-)
+);
+
+CREATE TABLE department(
+    id serial PRIMARY KEY,
+    name varchar(50)
+);
+CREATE TABLE product (
+     id SERIAL PRIMARY KEY ,
+     product_brand varchar(50),
+     product_name varchar(50),
+     product_description varchar(150),
+     dept_id SERIAL,
+     price money
+);
