@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import  java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -31,6 +32,8 @@ public class Customer {
     private String password;
     @Column(name="tel_no")
     private String telNo;
+    @Email
+    private String email;
     private String address1;
     private String address2;
 

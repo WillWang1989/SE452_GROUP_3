@@ -1,6 +1,6 @@
 tips for git:
 
-always run 'git pull' before 'git commit' to avoid code conflicts, especially when changing data.sql, schema-*.sql and WindycityflyersApplications file,
+always run 'git pull' before 'git commit' to avoid code conflicts, especially when changing data.sql, schema-*.sql and WindycityflyersApplication.java file,
 
 
 the code contains 4 parts:
@@ -11,26 +11,11 @@ the code contains 4 parts:
 
 
 order_status:
-	pending_payment
-	paid/confirmed
-	picked up & delivering
-	delivered
+	1.pending_payment
+	2.paid/confirmed
+	3.waiting for pickup by runner
+	4.picked up & delivering
+	5.delivered
+	7.delivery failed & re-deliver
+	8.canceled
 	
-
-new table: order_product
-	eg:
-	product_A  		2
-	product_B		3
-	product_C		1
-	items of product
-	
-
-	
-
-
-product-> shopping chart -> order, shopping chart should be (relational sql) not nosql
-
-admin-> CRUD stores
-
-admin-> CRUD product, each product belongs to a store
-

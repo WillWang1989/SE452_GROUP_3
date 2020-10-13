@@ -48,11 +48,11 @@ INSERT INTO admin(user_name, name) VALUES
 
  */
 
- INSERT INTO customer(id,username,password,firstname,middlename,lastname,tel_no,dob,address1,address2) VALUES
-            (100001,'tom','passsw0rd!','Tom','M','Cat','+1 312 222 2222','1940-02-10','33RD ST','Chicago'),
-            (100002,'jerry','passsw0rd!','Jerry','M','Mouse','+1 312 666 6666','1940-02-10','33RD ST','Chicago'),
-            (100003,'test1','passsw0rd!',null,null,null,null,null ,null ,null ),
-            (100004,'test2','passsw0rd!',null,null,null,null,null ,null ,null );
+ INSERT INTO customer(id,username,password,firstname,middlename,lastname,tel_no,email,dob,address1,address2) VALUES
+            (100001,'tom','passsw0rd!','Tom','M','Cat','+1 312 222 2222','tom.cat@gmail.com','1940-02-10','33RD ST','Chicago'),
+            (100002,'jerry','passsw0rd!','Jerry','M','Mouse','+1 312 666 6666','jerry.mouse@gmail.com','1940-02-10','33RD ST','Chicago'),
+            (100003,'test1','passsw0rd!',null,null,null,null,null ,null ,null,null ),
+            (100004,'test2','passsw0rd!',null,null,null,null,null ,null ,null,null );
 
 INSERT INTO orders(id,customer_id ,order_date,order_status,payment_id,delivery_id,total_cost) VALUES
             (20001,100001,'2020-10-13',1,20001,300001,199.99),
