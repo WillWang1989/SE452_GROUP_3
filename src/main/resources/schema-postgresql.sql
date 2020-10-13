@@ -1,15 +1,16 @@
 
-DROP TABLE IF EXISTS custormer;
+DROP TABLE IF EXISTS customer;
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS order_products;
 DROP TABLE  IF EXISTS department;
 DROP  TABLE IF EXISTS  product;
+DROP TABLE IF EXISTS runner;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 
 CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
 
 
-CREATE TABLE custormer (
+CREATE TABLE customer (
     id serial  PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     password varchar(80)  NOT NULL ,
@@ -48,4 +49,10 @@ CREATE TABLE product (
      product_description varchar(150),
      dept_id SERIAL,
      price money
+);
+
+CREATE TABLE runner(
+    id serial PRIMARY KEY,
+    runner_name varchar(50),
+    runner_phone varchar(10),
 );
