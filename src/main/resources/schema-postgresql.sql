@@ -2,6 +2,8 @@
 DROP TABLE IF EXISTS customer;
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS order_products;
+DROP TABLE IF EXISTS cart_products;
+DROP TABLE IF EXISTS shopping_cart;
 DROP TABLE  IF EXISTS department;
 DROP  TABLE IF EXISTS  product;
 DROP TABLE IF EXISTS runner;
@@ -14,6 +16,10 @@ CREATE TABLE customer (
     id serial  PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     password varchar(80)  NOT NULL ,
+    firstname varchar(50),
+    middlename varchar(50),
+    lastname varchar(50),
+    dob DATE,
     email VARCHAR(50),
     tel_no VARCHAR(25),
     address1 varchar(500),
@@ -22,19 +28,30 @@ CREATE TABLE customer (
 
 CREATE TABLE orders(
     id serial  PRIMARY KEY,
-    order_id serial,
     customer_id serial NOT NULL,
-    orderDate DATE,
-    orderStatus INTEGER ,
-    paymentId serial,
-    deliverId serial,
-    totalCost money
+    order_date DATE,
+    order_status INTEGER ,
+    payment_id serial,
+    delivery_id serial,
+    total_cost money
 );
 
 CREATE  TABLE  order_products (
     id serial  PRIMARY KEY,
-    orderId serial,
-    productId serial,
+    order_id serial,
+    product_id serial,
+    count INTEGER
+);
+CREATE TABLE shopping_cart(
+    id serial primary key ,
+    customer_id serial,
+    total_cost money
+);
+
+CREATE TABLE cart_products (
+    id serial PRIMARY KEY,
+    shoppingcart_id serial,
+    product_id serial,
     count INTEGER
 );
 
@@ -54,5 +71,5 @@ CREATE TABLE product (
 CREATE TABLE runner(
     id serial PRIMARY KEY,
     runner_name varchar(50),
-    runner_phone varchar(10),
+    runner_phone varchar(10)
 );

@@ -14,6 +14,4 @@ public class Department {
     @GeneratedValue
     private long id;
     private String name;
-
-
 }

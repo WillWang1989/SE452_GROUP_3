@@ -10,14 +10,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "order_products")
-public class OrderProducts {
+@Table(name = "cart_products")
+public class CartProducts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
+    @JoinColumn(name = "shoppingcart_id")
+    private ShoppingCart cart;
     @ManyToOne
     @JoinColumn(name = "product_id",nullable = false)
     private Product product;

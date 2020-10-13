@@ -22,23 +22,24 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @Column(name = "order_date")
     private LocalDateTime orderDate;
+    @Column(name = "order_status")
     private int orderStatus;
     //TODO: add relation to payment table
+    @Column(name = "payment_id")
     private int paymentId;
     //TODO: add relation to delivery table
-    private int deliverId;
+    @Column(name = "delivery_id")
+    private int deliveryId;
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
+    @Column(name = "total_cost")
     private BigDecimal totalCost;
 
     @ToString.Exclude
-    @OneToMany
-    @JoinTable(
-            name = "order_products",
-            joinColumns={ @JoinColumn(name="order_id", referencedColumnName="id")  }
-    )
-    private List<Product> items;
+    @OneToMany(mappedBy = "order",fetch = FetchType.EAGER)
+    private List<OrderProducts> products;
     // private BigDecimal shippingFee;
 }
