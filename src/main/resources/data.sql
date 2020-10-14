@@ -78,3 +78,14 @@ INSERT INTO cart_products(id,shoppingcart_id,product_id,count) VALUES
             (default,102,3,1),
             (default,102,4,2),
             (default,103,1,5);
+
+INSERT INTO inventory (id, quantity, brand, count) values
+            (default, 1, 'Skippy', 2),
+            (default, 1, 'Fuji', 3),
+            (default, 1, 'Jewel', 2);
+
+INSERT INTO account_profiles(id, firstname, lastname, email, address, payment, phone) values
+            (default,'John','Doe', 'thefirst@aol.com', '123 Main Street', 125.00, 3122222222),
+            (default,'Jane','Smith', 'thesecond@aol.com', '456 Main Street', 25.00,3125647859),
+            (default,'Joe','Glasswell', 'thethird@aol.com', '789 Main Street', 55.00, 3125541235);
+

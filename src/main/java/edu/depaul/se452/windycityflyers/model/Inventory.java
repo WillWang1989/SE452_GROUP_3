@@ -21,9 +21,8 @@ public class Inventory {
     @Id
     @GeneratedValue
     private long id;
-    private String name;
     private long quantity;
     private String brand;
-    private String availability;
+    private String count;
 
 }
