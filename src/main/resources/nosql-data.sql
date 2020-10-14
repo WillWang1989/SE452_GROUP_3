@@ -18,3 +18,13 @@ db.runner_reviews.insertMany ([
     {name : "Bianca Del Rio", num_stars : "3"}
 ])
 
+db.createcollection ("customer_reviews)
+
+db.customer_reviews.insertmany ([
+    {name : "User1", num_stars : "2"},
+    {name : "User1", num_stars : "2"},
+    {name : "User1", num_stars : "2"}
+
+])
+
+
