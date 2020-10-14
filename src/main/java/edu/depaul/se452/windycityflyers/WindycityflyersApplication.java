@@ -37,6 +37,7 @@ public class WindycityflyersApplication {
 			log.info("-------------------------------");
 		};
 	}
+
 	@Bean
 	public CommandLineRunner showCustomer(CustomerRepository repository) {
 		return (args) -> {
@@ -90,9 +91,8 @@ public class WindycityflyersApplication {
 		};
 	}
 
-
 	@Bean
-	public CommandLineRunner saveCourseReview(LogsRepository repository) {
+	public CommandLineRunner saveLogsReview(LogsRepository repository) {
 		return (args) -> {
 			log.info("begin of writing logs");
 			Logs log1 = new Logs();
@@ -127,7 +127,7 @@ public class WindycityflyersApplication {
 	}
 
 	@Bean
-	public CommandLineRunner showCourseReview(LogsRepository repository) {
+	public CommandLineRunner showLogsReview(LogsRepository repository) {
 		return (args) -> {
 			List<Logs> logs = repository.findAll();
 			log.info("logs found with findAll():");
@@ -135,6 +135,19 @@ public class WindycityflyersApplication {
 			for (Logs l : logs) {
 				log.info(l.toString());
 			}
+			log.info("-------------------------------");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner showAdmin(AdminRepository repository) {
+		return (args) -> {
+			// fetch all Customers
+			log.info("List of administrators found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((it) -> {
+				log.info(it.toString());
+			});
 			log.info("-------------------------------");
 		};
 	}

@@ -5,10 +5,11 @@ DROP TABLE IF EXISTS order_products;
 DROP TABLE IF EXISTS cart_products;
 DROP TABLE IF EXISTS shopping_cart;
 DROP TABLE IF EXISTS department;
-DROP TABLE IF EXISTS  product;
+DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS runner;
 DROP TABLE IF EXISTS inventory;
 DROP TABLE IF EXISTS account_profiles;
+DROP TABLE IF EXISTS  admin;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 
 CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
@@ -75,6 +76,11 @@ CREATE TABLE runner (
     runner_name varchar(50),
     runner_phone varchar(10)
 );
+CREATE TABLE admin(
+    id serial PRIMARY KEY,
+    user_name varchar(50),
+    name varchar(10)
+);
 
 CREATE TABLE inventory(
     id serial PRIMARY KEY ,
@@ -90,6 +96,6 @@ CREATE TABLE account_profiles(
     lastname varchar (100),
     email varchar(100),
     address varchar (100),
-    payment long,
-    phone long
+    payment varchar(100),
+    phone varchar(20)
 );

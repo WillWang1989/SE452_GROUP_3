@@ -20,7 +20,6 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  long id;
-    @NotEmpty
     @Column(nullable = false, unique = true)
     private String username;
     private String firstname;
@@ -32,7 +31,6 @@ public class Customer {
     private String password;
     @Column(name="tel_no")
     private String telNo;
-    @Email
     private String email;
     private String address1;
     private String address2;
