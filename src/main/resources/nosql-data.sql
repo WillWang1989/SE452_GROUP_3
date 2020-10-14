@@ -9,3 +9,12 @@ db.aisle.insert ({
     num : 6
     dept_id : 4
 })
+
+db.createcollection ("runner_reviews")
+
+db.runner_reviews.insertMany ([
+    {name : "Roxxy Andrews", num_stars : "4"},
+    {name : "RuPaul Charles", num_stars : "5"},
+    {name : "Bianca Del Rio", num_stars : "3"}
+])
+
