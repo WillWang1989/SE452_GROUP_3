@@ -27,4 +27,17 @@ db.customer_reviews.insertmany ([
 
 ])
 
+db.createcollection ("Delivery")
+
+db.delivery.insertmany ([
+    {string : "Monday", time : "0900"}
+    {string : "Tuesday", time : "1000"}
+    {string : "Wednesday", time : "1100"}
+    {string : "Thursday", time : "1200"}
+    {string : "Friday", time : "1300"}
+    {string : "Saturday", time : "1400"}
+    {string : "Sunday", time : "1500"}
+
+])
+
 
