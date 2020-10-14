@@ -1,19 +1,19 @@
-/*INSERT INTO Runner (name, phone) VALUES
+INSERT INTO Runner (runner_name, runner_phone) VALUES
             ('Roxxy Andrews', 3122241234),
             ('RuPaul Charles', 3122341234),
-            ('Bianca Del Rio', 7732241234);*/
+            ('Bianca Del Rio', 7732241234);
 INSERT INTO Department (id,name) VALUES
             (101,'Protein'),
             (102,'Dairy'),
             (103,'Fruit'),
             (104,'Vegetables'),
             (105,'Grains');
-/*
-INSERT INTO AccountProfiles (firstname, lastname, email, address, payment, phone) VALUES
+
+INSERT INTO account_profiles (firstname, lastname, email, address, payment, phone) VALUES
             ('Roxxy', 'Andrews', 'RoxxyDrag@aol.com', '1234 Main Street', '1236256554788956', 1235218475),
             ('Ivy', 'Winters', 'IvyFrozen@aol.com', '1234 Main Street', '1236256554788956', 1235218475),
             ('Shangela', 'Wodley', 'ShangelaHaleloo@aol.com', '1234 Main Street', '1236256554788956', 1235218475);
-
+/*
 INSERT INTO Inventory (id, name, quantity, brand, availability) VALUES
             (1, peanut butter, 12, Skippy, 5),
             (2, peanut butter, 9, Jif, 8),
@@ -39,14 +39,14 @@ INSERT INTO product(product_brand,product_name, product_description, dept_id, pr
             ('Fuji', 'Apple', 'large',  101, 2.99),
             ('Green Giant', 'Broccoli', 'florets',  102, 1.99),
             ('Jewel', 'Milk', 'whole',  103, 1.99);
-/*
+
 INSERT INTO admin(user_name, name) VALUES
             ('jsmith', 'John Smith'),
             ('jdoe', 'Jane Doe'),
             ('dmill','David Miller'),
-            ('ssanders', 'Sarah Sanders')
+            ('ssanders', 'Sarah Sanders');
 
- */
+
 
  INSERT INTO customer(id,username,password,firstname,middlename,lastname,tel_no,email,dob,address1,address2) VALUES
             (100001,'tom','passsw0rd!','Tom','M','Cat','+1 312 222 2222','tom.cat@gmail.com','1940-02-10','33RD ST','Chicago'),

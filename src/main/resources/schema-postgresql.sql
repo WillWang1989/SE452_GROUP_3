@@ -79,7 +79,7 @@ CREATE TABLE runner (
 CREATE TABLE admin(
     id serial PRIMARY KEY,
     user_name varchar(50),
-    name varchar(10)
+    name varchar(100)
 );
 
 CREATE TABLE inventory(
