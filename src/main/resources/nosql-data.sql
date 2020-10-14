@@ -22,8 +22,8 @@ db.createcollection ("customer_reviews)
 
 db.customer_reviews.insertmany ([
     {name : "User1", num_stars : "2"},
-    {name : "User1", num_stars : "2"},
-    {name : "User1", num_stars : "2"}
+    {name : "User2", num_stars : "2"},
+    {name : "User3", num_stars : "2"}
 
 ])
 
