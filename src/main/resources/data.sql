@@ -19,7 +19,7 @@ INSERT INTO Inventory (id, name, quantity, brand, availability) VALUES
             (2, peanut butter, 9, Jif, 8),
             (3, mustard, 23, Heinz, 9);
 */
-/*
+
 INSERT INTO PAYMENT (id, payment_type, amount, card_num, cust_name, cust_id) VALUES
             (1, 'Debit', 123.12, 123456789, 'Bryan Harris', 12),
             (2, 'Credit', 23.00, 1290830921, 'Michael Jordan', 23),
@@ -28,7 +28,7 @@ INSERT INTO PAYMENT (id, payment_type, amount, card_num, cust_name, cust_id) VAL
 INSERT INTO store(id, store_name, street_address, city, state, zip) VALUES
             (1, 'Walmart', '123 Main Street', 'Chicago','IL', 23452),
             (2, 'Target', '234 Bears Avenue', 'Chicago','IL', 23436)
-
+/*
 -- INSERT INTO aisle(id, num, dept_id) VALUES
 --             (1, 3, 4),
 --             (2, 2, 4)

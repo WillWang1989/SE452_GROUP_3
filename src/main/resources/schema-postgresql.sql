@@ -10,6 +10,8 @@ DROP TABLE IF EXISTS runner;
 DROP TABLE IF EXISTS inventory;
 DROP TABLE IF EXISTS account_profiles;
 DROP TABLE IF EXISTS  admin;
+DROP TABLE IF EXISTS  payment;
+DROP TABLE IF EXISTS  store;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 
 CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
@@ -98,4 +100,23 @@ CREATE TABLE account_profiles(
     address varchar (100),
     payment varchar(100),
     phone varchar(20)
+);
+
+CREATE TABLE payment (
+     id serial PRIMARY KEY,
+     payment_type VARCHAR(50),
+     amount FLOAT,
+     card_num int,
+     payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+     cust_name VARCHAR(75),
+     cust_id integer
+);
+
+CREATE TABLE store (
+    id serial PRIMARY KEY ,
+    store_name VARCHAR(30),
+    street_address VARCHAR(150),
+    city VARCHAR(50),
+    state VARCHAR(10),
+    zip integer
 );
