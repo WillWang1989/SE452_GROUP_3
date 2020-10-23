@@ -31,6 +31,7 @@ public class CustomerServiceImpl implements CustomerService{
         user.setLastname(registration.getLastName());
         user.setEmail(registration.getEmail());
         user.setPassword(passwordEncoder.encode(registration.getPassword()));
+        user.setUsername(registration.getUserName());
         return userRepository.save(user);
     }
 
@@ -38,7 +39,10 @@ public class CustomerServiceImpl implements CustomerService{
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Customer user = userRepository.findByEmail(email);
         if (user == null) {
-            throw new UsernameNotFoundException("Invalid username or password.");
+            user = userRepository.findByUsername(email);
+            if(user ==null) {
+                throw new UsernameNotFoundException("Invalid username or password.");
+            }
         }
         return new org.springframework.security.core.userdetails.User(user.getEmail(),
                 user.getPassword(),

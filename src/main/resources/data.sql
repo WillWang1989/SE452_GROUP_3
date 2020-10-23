@@ -23,11 +23,11 @@ INSERT INTO Inventory (id, name, quantity, brand, availability) VALUES
 INSERT INTO PAYMENT (id, payment_type, amount, card_num, cust_name, cust_id) VALUES
             (1, 'Debit', 123.12, 123456789, 'Bryan Harris', 12),
             (2, 'Credit', 23.00, 1290830921, 'Michael Jordan', 23),
-            (3, 'Debit', 50.20, 21321321, 'Nick Foles', 13)
+            (3, 'Debit', 50.20, 21321321, 'Nick Foles', 13);
 
 INSERT INTO store(id, store_name, street_address, city, state, zip) VALUES
             (1, 'Walmart', '123 Main Street', 'Chicago','IL', 23452),
-            (2, 'Target', '234 Bears Avenue', 'Chicago','IL', 23436)
+            (2, 'Target', '234 Bears Avenue', 'Chicago','IL', 23436);
 /*
 -- INSERT INTO aisle(id, num, dept_id) VALUES
 --             (1, 3, 4),
@@ -49,10 +49,10 @@ INSERT INTO admin(user_name, name) VALUES
 
 
  INSERT INTO customer(id,username,password,firstname,middlename,lastname,tel_no,email,dob,address1,address2) VALUES
-            (100001,'tom','passsw0rd!','Tom','M','Cat','+1 312 222 2222','tom.cat@gmail.com','1940-02-10','33RD ST','Chicago'),
-            (100002,'jerry','passsw0rd!','Jerry','M','Mouse','+1 312 666 6666','jerry.mouse@gmail.com','1940-02-10','33RD ST','Chicago'),
-            (100003,'test1','passsw0rd!',null,null,null,null,null ,null ,null,null ),
-            (100004,'test2','passsw0rd!',null,null,null,null,null ,null ,null,null );
+            (100001,'tom','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW','Tom','M','Cat','+1 312 222 2222','tom.cat@gmail.com','1940-02-10','33RD ST','Chicago'),
+            (100002,'jerry','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW','Jerry','M','Mouse','+1 312 666 6666','jerry.mouse@gmail.com','1940-02-10','33RD ST','Chicago'),
+            (100003,'test1','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW',null,null,null,null,null ,null ,null,null ),
+            (100004,'test2','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW',null,null,null,null,null ,null ,null,null );
 
 INSERT INTO orders(id,customer_id ,order_date,order_status,payment_id,delivery_id,total_cost) VALUES
             (20001,100001,'2020-10-13',1,20001,300001,199.99),
