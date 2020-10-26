@@ -21,4 +21,8 @@ public class MainController {
     public String userIndex() {
         return "user/index";
     }
+
+    @GetMapping("/search")
+    public String search() { return "/Search";
+    }
 }
