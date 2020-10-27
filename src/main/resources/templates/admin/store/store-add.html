@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/admin/fragments/layout::style_meta"></div>
+    <title>create a new store</title>
+</head>
+<body>
+<div th:replace="~{/admin/fragments/layout::header}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{/admin/fragments/layout::sidebar}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
+                <h2>New Store</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="#" th:action="@{/admin/store/add}" th:object="${store}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="name" class="col-form-label">Store Name</label>
+                                <input type="text" th:field="*{store_name}" class="form-control" id="name" placeholder="Store name">
+                                <span th:if="${#fields.hasErrors('store_name')}" th:errors="*{store_name}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="street_address" class="col-form-label">Street address</label>
+                                <input type="text" th:field="*{street_address}" class="form-control" id="street_address" placeholder="Street address">
+                                <span th:if="${#fields.hasErrors('street_address')}" th:errors="*{street_address}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="city" class="col-form-label">City</label>
+                                <input type="text" th:field="*{city}" class="form-control" id="city" placeholder="City">
+                                <span th:if="${#fields.hasErrors('city')}" th:errors="*{city}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="state" class="col-form-label">State</label>
+                                <input type="text" th:field="*{state}" class="form-control" id="state" placeholder="State">
+                                <span th:if="${#fields.hasErrors('State')}" th:errors="*{state}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="zip" class="col-form-label">Zip</label>
+                                <input type="text" th:field="*{zip}" class="form-control" id="zip" placeholder="zip code">
+                                <span th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-5">
+                                <input type="submit" class="btn btn-sm btn-outline-secondary" value="Add">
+                                <input type="button" class="btn btn-sm btn-outline-secondary" value="Back" onclick="history.go(-1)">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<div th:replace="~{/admin/fragments/layout::scripts}"></div>
+<script>
+    $(".sidebar-sticky .nav-link").eq(3).addClass("active");
+</script>
+</body>
+</html>

@@ -12,11 +12,6 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/login")
-    public String login(Model model) {
-        return "login";
-    }
-
     @GetMapping("/user")
     public String userIndex() {
         return "user/index";
@@ -25,4 +20,13 @@ public class MainController {
     @GetMapping("/search")
     public String search() { return "/Search";
     }
-}
+
+    @GetMapping("/admin/")
+    public String adminIndex() {
+        return "admin/index";
+    }
+
+    @GetMapping("/runner/")
+    public String runnerIndex() {
+        return "runner/index";
+    }}

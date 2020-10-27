@@ -1,0 +1,1 @@
+datatype of 'zip' field on 'store' table changed to varchar(5)

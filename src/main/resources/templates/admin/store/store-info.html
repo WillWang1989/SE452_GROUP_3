@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/admin/fragments/layout::style_meta"></div>
+    <title th:text="${store.store_name}">Store Name</title>
+</head>
+<body>
+<div th:replace="~{/admin/fragments/layout::header}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{/admin/fragments/layout::sidebar_store}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2 pt-3 pb-2" th:text="${store.store_name}">Dashboard</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <span th:text="${store.street_address +', '+store.city+', '+store.state+', '+store.zip}"></span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h2>Home</h2>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <a class="btn btn-sm btn-outline-secondary mx-3"
+                           th:href="@{/admin/store/}"
+                        >
+                            <i data-feather="list"></i>Store List
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary"
+                           th:href="@{/admin/}"
+                        >
+                            <i data-feather="home"></i>Admin Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-3" th:inline="text">Welcome to [[${store.store_name}]] </h1>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<div th:replace="~{/admin/fragments/layout::scripts}"></div>
+<script>
+    $(".sidebar-sticky .nav-link").eq(0).addClass("active");
+</script>
+</body>
+</html>

@@ -91,7 +91,6 @@ public class WindycityflyersApplication {
 		};
 	}
 
-	@Bean
 	public CommandLineRunner saveLogsReview(LogsRepository repository) {
 		return (args) -> {
 			log.info("begin of writing logs");

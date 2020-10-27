@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,20 +14,13 @@
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed"
-                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                    aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span> <span
-                    class="icon-bar"></span> <span class="icon-bar"></span> <span
-                    class="icon-bar"></span>
-            </button>
+        <div class="navbar-header" sec:authorize="${not(isAuthenticated())}">
             <a class="navbar-brand" href="#" th:href="@{/login}">Registration and
                 Login Module</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div sec:authorize="isAuthenticated()" id="navbar" class="navbar-header ml-auto">
             <ul class="nav navbar-nav">
-                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+                <li ><a th:href="@{/logout}">Logout</a></li>
             </ul>
         </div>
     </div>
@@ -36,11 +29,10 @@
 <br>
 <br>
 <div class="container">
-    <h2>User Registration and Login Module using Spring Boot, Spring
-        MVC, Spring Security, JPA/Hibernate and Thymeleaf</h2>
+    <h2>Grocery Runner Product Page</h2>
 
-    <p>
-        Welcome <span sec:authentication="principal.username">User</span>
+    <p sec:authorize="isAuthenticated()">
+        Welcome <span sec:authentication="principal.username" class="font-italic font-weight-bold">User</span>
     </p>
 </div>
 

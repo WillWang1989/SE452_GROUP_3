@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div  th:replace="/admin/fragments/layout::style_meta"></div>
+    <title>Home</title>
+</head>
+<body>
+<div th:replace="~{/admin/fragments/layout::header}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{/admin/fragments/layout::sidebar}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <h1 class="h2 pb-2 pt-3 border-bottom">Home</h1>
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-3">Welcome to grocery runner management system</h1>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<div th:replace="~{/admin/fragments/layout::scripts}"></div>
+<script>
+    $(".sidebar-sticky .nav-link").eq(0).addClass("active");
+</script>
+</body>
+</html>
