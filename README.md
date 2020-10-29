@@ -3,8 +3,6 @@
 This repository will be used in a collaborative manner for our SE452 group project "Grocery Runner" as well as any other topics that will assist the team 
 throughout the quarter for this course.  This repository is considered private and is only available via invitation.
 
-# For Professor Ken Yu
-Please use branch [Milestone2](https://github.com/gportil2/SE-452-Object-Oreinted-Enterprise-Computing/tree/milestone2) when checking our milestone 2 submission. we may commit code that is not working to **[master]** branch
 
 # Project Structure
 [Spring boot project structure](https://medium.com/the-resonant-web/spring-boot-2-0-project-structure-and-best-practices-part-2-7137bdcba7d3)
