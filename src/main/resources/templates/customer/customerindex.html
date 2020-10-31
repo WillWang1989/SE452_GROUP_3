@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head >
-    <div th:replace="/runner/fragments/layout::style_meta"></div>
-    <title>Runner--Home</title>
+    <div th:replace="/customer/Customerfragment/customer-layout::style_meta"></div>
+    <title>Customer--Home</title>
 </head>
 <body>
-<div th:replace="~{/runner/fragments/layout::header}"></div>
+<div th:replace="~{/customer/Customerfragment/customer-layout::header}"></div>
 
 <div class="container-fluid">
     <div class="row">
-        <div th:replace="~{/runner/fragments/layout::sidebar}"></div>
+        <div th:replace="~{/customer/Customerfragment/customer-layout::sidebar}"></div>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <h1 class="h2 pb-2 pt-3 border-bottom">Home</h1>
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="display-3"> Runners, Welcome to Grocery Runner system!</h1>
+                    <h1 class="display-3"> Customers, Welcome to Grocery Runner system!</h1>
                 </div>
             </div>
 
@@ -24,7 +24,7 @@
 </div>
 
 
-<div th:replace="~{/runner/fragments/layout::scripts}"></div>
+<div th:replace="~{/customer/Customerfragment/customer-layout::scripts}"></div>
 <script>
     $(".sidebar-sticky .nav-link").eq(4).addClass("active");
 </script>

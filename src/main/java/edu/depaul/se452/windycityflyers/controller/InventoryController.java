@@ -1,6 +1,5 @@
 package edu.depaul.se452.windycityflyers.controller;
 
-import edu.depaul.se452.windycityflyers.model.Department;
 import edu.depaul.se452.windycityflyers.model.Inventory;
 import edu.depaul.se452.windycityflyers.service.DepartmentService;
 import edu.depaul.se452.windycityflyers.service.StoreService;
@@ -22,18 +21,18 @@ public class InventoryController {
     @GetMapping("")
     public String showAllDepartment(@PathVariable("storeId") String storeId, Model model) {
         model.addAttribute("store",storeService.findById(storeId));
-        return "admin/department/inventory-list";
+        return "admin/inventory/inventory-list";
     }
 
     @GetMapping("/add")
     public String addStore(Model model) {
         model.addAttribute("inventory", new Inventory());
-        return "admin/department/inventory-add";
+        return "admin/inventory/inventory-add";
     }
 
     @GetMapping("/edit")
     public String editStore(Model model) {
         model.addAttribute("inventory", new Inventory());
-        return "admin/department/inventory-edit";
+        return "admin/inventory/inventory-edit";
     }
 }

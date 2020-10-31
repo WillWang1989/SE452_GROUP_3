@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/admin/fragments/layout::style_meta"></div>
+    <title>Create a New Inventory Inquiry</title>
+</head>
+<body>
+<div th:replace="~{/admin/fragments/layout::header}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{/admin/fragments/layout::sidebar}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
+                <h2>New Inventory Product</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="#" th:action="@{/admin/store/add}"  th:object="${Inventory}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="name" class="col-form-label">Inventory Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="department name">
+                                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6 mt-5">
+                                <input type="submit" class="btn btn-sm btn-outline-secondary" value="Add">
+                                <input type="button" class="btn btn-sm btn-outline-secondary" value="Back" onclick="history.go(-1)">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<div th:replace="~{/admin/fragments/layout::scripts}"></div>
+<script>
+    $(".sidebar-sticky .nav-link").eq(3).addClass("active");
+</script>
+</body>
+</html>
