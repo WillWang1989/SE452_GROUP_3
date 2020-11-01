@@ -24,7 +24,7 @@
                 <a class="dropdown-item" href="#">Reset Password</a>
                 <a class="dropdown-item" href="#">Sign Out</a>
             </div>
-        < /li>
+        </li>
     </ul>
 </nav>
 
@@ -62,7 +62,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/runner/">
+                <a class="nav-link" href="/runner/">
                     <span data-feather="users"></span>
                     Runners
                 </a>
@@ -118,7 +118,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" th:href="@{/admin/store/{id}/inventory(id=${store.id})}">
                     <span data-feather="users"></span>
                     Inventory
                 </a>

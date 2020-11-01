@@ -1,1 +1,31 @@
 .collapsing { transition:height 0.35s ease !important; }
+
+.half-circle-right{
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+.half-circle-left{
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+.rounded-left-0{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.rounded-right-0{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-control.bg-none{
+    background-image: none;
+}
+
+.dropdown-item:focus, .dropdown-item:hover{
+    text-decoration: underline;
+}
+.main svg.feather{
+    stroke:#28a745;
+}
+.content{
+    max-width:1360px
+}
