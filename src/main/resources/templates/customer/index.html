@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="../../css/app.css?v=11111">
+    <title>Grocery Runner Online System</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="row w-100 main">
+        <div class="col-2">
+            <span class="navbar-brand">Grocery Runner</span>
+        </div>
+        <div class="col-7 text-center">
+            <form class="form-inline d-inline-block my-lg-0 w-100">
+                <button
+                        type="button"
+                        class="btn btn-outline-success half-circle-left rounded-right-0 dropdown-toggle mr-n1"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                >
+                    Department
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">All Department</a>
+                    <a class="dropdown-item" href="#">Protein</a>
+                    <a class="dropdown-item" href="#">Dairy</a>
+                    <a class="dropdown-item" href="#">Fruit</a>
+                    <a class="dropdown-item" href="#">Vegetables</a>
+                </div>
+                <input
+                        class="form-control w-75 is-valid bg-none rounded-0 border-right-0 border-left-0 "
+                        type="search" placeholder="Search" aria-label="Search"
+                />
+                <button class="btn btn-outline-success ml-n1 half-circle-right rounded-left-0" type="submit">Search
+                </button>
+            </form>
+        </div>
+        <div class="col-3 text-right pt-2">
+            <a class="d-inline-block text-body"> Account<i data-feather="user"></i></a>
+            <a class="d-inline-block ml-3 text-body"> Shopping Cart<i data-feather="shopping-cart"></i><span class="ml-1 badge badge-success">3</span> </a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid content">
+    <div class="row border-bottom border-top mt-5 py-3">
+        <div class="col-2">
+            1 to 40 of 1,000+ products
+        </div>
+        <div class="col-10">
+            <div class="row">
+                <div class="col-6">
+                    <b>Refine by </b> | Price
+                </div>
+                <div class="col-6">
+                    <b>Sorted by </b> | Price
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <nav id="sidebarMenu" class="col-2 d-md-block bg-light sidebar px-0 collapse">
+            <div class="sidebar-sticky pt-3">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-sm" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Departments
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item py-2">Protein</li>
+                                    <li class="list-group-item py-2">Dairy</li>
+                                    <li class="list-group-item py-2">Fruit</li>
+                                    <li class="list-group-item py-2">Vegetables</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-sm" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Price
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <div class="col-10">
+            <div  class="row">
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="row">
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="row">
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="row">
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col p-3 m-2">
+                    <div >
+                        <img class="card-img-top" src="https://i5.walmartimages.com/asr/315d4dac-d1c2-441c-8fc0-dfa7f137808c.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=312&odnHeight=312" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-title"> product i </p>
+                            <p class="card-title"> $8.88 </p>
+                        </div>
+                        <div class="card-footer border-0 p-1 bg-transparent text-center">
+                            <button class="btn half-circle-left half-circle-right btn-success">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center mb-5 mt-3">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link text-success" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link text-success" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link text-success" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link text-success" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link text-success" href="#">4</a></li>
+                        <li class="page-item active"><a class="page-link text-success" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link text-success" href="#">6</a></li>
+                        <li class="page-item"><a class="page-link text-success" href="#">7</a></li>
+                        <li class="page-item"><a class="page-link text-success" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link text-success" href="#">25</a></li>
+                        <li class="page-item">
+                            <a class="page-link text-success" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
+</body>
+</html>
