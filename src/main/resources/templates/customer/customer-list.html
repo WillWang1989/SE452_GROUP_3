@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/admin/fragments/layout::style_meta"></div>
+    <title>store list</title>
+</head>
+<body>
+<div th:replace="~{/admin/fragments/layout::header}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{/admin/fragments/layout::sidebar}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
+                <h2>Customer List</h2>
+            </div>
+            <div>
+                <!--<div th:if="${#lists.isEmpty(stores)}" class="row">
+                    <h3 class="pl-3">No stores yet!</h3>
+                </div>-->
+                <!--<div th:if="${not #lists.isEmpty(stores)}" class="table-responsive"> -->
+                <div>
+                    <table class="table table-striped table-sm">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>username</th>
+                            <th>first name</th>
+                            <th>middle name</th>
+                            <th>last name</th>
+                            <th>dob</th>
+                            <th>telephone number</th>
+                            <th>email</th>
+                            <th>address1</th>
+                            <th>address2</th>
+                            <th>payment</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Jackson5@</td>
+                            <td>Michael</td>
+                            <td>M</td>
+                            <td>Jackson</td>
+                            <td>8/23/1959</td>
+                            <td>1234567890</td>
+                            <td>jackson5@gmail.com</td>
+                            <td>123 Main St</td>
+                            <td></td>
+                            <td>
+                                <!--<a th:href="@{/admin/store/edit/{id}(id=${store.id})}" -->
+                                <a th:href="@{/admin/customer/payment/{id}(id=${1})}"
+                                   class="btn px-1 py-0 btn-outline-secondary"
+                                   title="add payment"
+                                >
+                                    <i data-feather="edit"></i>
+                                </a>
+                                <!--<a th:href="@{/admin/store/delete/{id}(id=${store.id})}"-->
+                                <a href="#"
+                                   class="btn px-1 py-0 btn-outline-secondary"
+                                   title="delete this store"
+                                >
+                                    <i data-feather="trash-2"></i>
+                                </a>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<div th:replace="~{/admin/fragments/layout::scripts}"></div>
+<script>
+    $(".sidebar-sticky .nav-link").eq(3).addClass("active");
+</script>
+</body>
+</html>
