@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head >
     <div th:replace="/runner/fragments/layout::style_meta"></div>
-    <title>Orders delivered by me</title>
+    <title>Past Orders Delivered</title>
 </head>
 <body>
 <div th:replace="~{/runner/fragments/layout::header}"></div>
@@ -11,130 +11,53 @@
     <div class="row">
         <div th:replace="~{/runner/fragments/layout::sidebar}"></div>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <h1 class="h2 pb-2 pt-3">Orders delivered by me</h1>
+            <h1 class="h2 pb-2 pt-3">Past Orders Delivered</h1>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
+                        <th>Order Number</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
+                        <td>34</td>
+                        <td>George</td>
+                        <td>Washington</td>
+                        <td>2345 North Ave, Chicago, IL 60612</td>
+                        <td>312-555-7891</td>
                     </tr>
                     <tr>
-                        <td>1,002</td>
-                        <td>amet</td>
-                        <td>consectetur</td>
-                        <td>adipiscing</td>
-                        <td>elit</td>
+                        <td>38</td>
+                        <td>John</td>
+                        <td>Adams</td>
+                        <td>4567 Lakeshore Dr, Chicago, IL 60612</td>
+                        <td>312-555-8888</td>
                     </tr>
                     <tr>
-                        <td>1,003</td>
-                        <td>Integer</td>
-                        <td>nec</td>
-                        <td>odio</td>
-                        <td>Praesent</td>
+                        <td>54</td>
+                        <td>Thomas</td>
+                        <td>Jefferson</td>
+                        <td>567 Belmont Ave, Chicago, IL 60656</td>
+                        <td>312-555-4567</td>
                     </tr>
                     <tr>
-                        <td>1,003</td>
-                        <td>libero</td>
-                        <td>Sed</td>
-                        <td>cursus</td>
-                        <td>ante</td>
+                        <td>68</td>
+                        <td>James</td>
+                        <td>Madison</td>
+                        <td>789 Clark St, Chicago, IL 60614</td>
+                        <td>312-555-2222</td>
                     </tr>
                     <tr>
-                        <td>1,004</td>
-                        <td>dapibus</td>
-                        <td>diam</td>
-                        <td>Sed</td>
-                        <td>nisi</td>
-                    </tr>
-                    <tr>
-                        <td>1,005</td>
-                        <td>Nulla</td>
-                        <td>quis</td>
-                        <td>sem</td>
-                        <td>at</td>
-                    </tr>
-                    <tr>
-                        <td>1,006</td>
-                        <td>nibh</td>
-                        <td>elementum</td>
-                        <td>imperdiet</td>
-                        <td>Duis</td>
-                    </tr>
-                    <tr>
-                        <td>1,007</td>
-                        <td>sagittis</td>
-                        <td>ipsum</td>
-                        <td>Praesent</td>
-                        <td>mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,008</td>
-                        <td>Fusce</td>
-                        <td>nec</td>
-                        <td>tellus</td>
-                        <td>sed</td>
-                    </tr>
-                    <tr>
-                        <td>1,009</td>
-                        <td>augue</td>
-                        <td>semper</td>
-                        <td>porta</td>
-                        <td>Mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,010</td>
-                        <td>massa</td>
-                        <td>Vestibulum</td>
-                        <td>lacinia</td>
-                        <td>arcu</td>
-                    </tr>
-                    <tr>
-                        <td>1,011</td>
-                        <td>eget</td>
-                        <td>nulla</td>
-                        <td>Class</td>
-                        <td>aptent</td>
-                    </tr>
-                    <tr>
-                        <td>1,012</td>
-                        <td>taciti</td>
-                        <td>sociosqu</td>
-                        <td>ad</td>
-                        <td>litora</td>
-                    </tr>
-                    <tr>
-                        <td>1,013</td>
-                        <td>torquent</td>
-                        <td>per</td>
-                        <td>conubia</td>
-                        <td>nostra</td>
-                    </tr>
-                    <tr>
-                        <td>1,014</td>
-                        <td>per</td>
-                        <td>inceptos</td>
-                        <td>himenaeos</td>
-                        <td>Curabitur</td>
-                    </tr>
-                    <tr>
-                        <td>1,015</td>
-                        <td>sodales</td>
-                        <td>ligula</td>
-                        <td>in</td>
-                        <td>libero</td>
+                        <td>72</td>
+                        <td>James</td>
+                        <td>Monroe</td>
+                        <td>3456 N Racine Ave, Chicago, IL 60657</td>
+                        <td>312-555-1111</td>
                     </tr>
                     </tbody>
                 </table>
