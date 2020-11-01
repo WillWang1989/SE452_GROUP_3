@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/admin/fragments/layout::style_meta"></div>
+    <title>create a new payment</title>
+</head>
+<body>
+<div th:replace="~{/admin/fragments/layout::header}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{/admin/fragments/layout::sidebar}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
+                <h2>New Payment Method</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="#" th:action="@{/admin/customer}"  th:object="${payment}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="type" class="col-form-label">Payment Type</label>
+                                <input type="text" class="form-control" id="type" placeholder="Enter credit or debit">
+                                <!--<span th:if="${#fields.hasErrors('payment_type')}" th:errors="*{payment_type}" class="text-danger"></span>-->
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="cardNum" class="col-form-label">Card Number</label>
+                                <input type="text" class="form-control" id="cardNum" placeholder="Enter card number">
+                                <!--<span th:if="${#fields.hasErrors('card_num')}" th:errors="*{card_num}" class="text-danger"></span>-->
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="paymentDate" class="col-form-label">Payment Date</label>
+                                <input type="text" class="form-control" id="paymentDate" placeholder="Enter payment date">
+                                <!--<span th:if="${#fields.hasErrors('payment_date')}" th:errors="*{payment_date}" class="text-danger"></span>-->
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="custName" class="col-form-label">Cardholder Name</label>
+                                <input type="text" class="form-control" id="custName" placeholder="Enter name on card">
+                                <!--<span th:if="${#fields.hasErrors('cust_name')}" th:errors="*{cust_name}" class="text-danger"></span>-->
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6 mt-5">
+                                <input type="submit" class="btn btn-sm btn-outline-secondary" value="Add">
+                                <input type="button" class="btn btn-sm btn-outline-secondary" value="Back" onclick="history.go(-1)">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<div th:replace="~{/admin/fragments/layout::scripts}"></div>
+<script>
+    $(".sidebar-sticky .nav-link").eq(3).addClass("active");
+</script>
+</body>
+</html>
