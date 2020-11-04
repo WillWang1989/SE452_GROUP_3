@@ -9,7 +9,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div th:replace="~{/admin/fragments/layout::sidebar}"></div>
+        <div th:replace="~{/admin/fragments/layout::sidebar_store}"></div>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -75,7 +75,7 @@
 </div>
 <div th:replace="~{/admin/fragments/layout::scripts}"></div>
 <script>
-    $(".sidebar-sticky .nav-link").eq(3).addClass("active");
+    $(".sidebar-sticky .nav-link").eq(1).addClass("active");
 </script>
 </body>
 </html>

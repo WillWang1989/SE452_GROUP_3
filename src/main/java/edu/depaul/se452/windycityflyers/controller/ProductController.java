@@ -100,4 +100,13 @@ public class ProductController {
         model.addAttribute("products", productService.findAll());
         return "redirect:/admin/store/"+storeId+"/product";
     }
+    @GetMapping("/{id}/upload")
+    public String uploadPicture(@PathVariable("storeId") String storeId,
+                                @PathVariable("id") String productid,Model model){
+        model.addAttribute("store",storeService.findById(storeId));
+        model.addAttribute("product",productService.findById(productid));
+        return "admin/product/product-img";
+
+    }
+
 }

@@ -64,6 +64,12 @@
                             <td th:text="${product.dept.name}">101</td>
                             <td th:text="${product.price}">1,001.99</td>
                             <td>
+                                <a th:href="@{/admin/store/{storeId}/product/{id}/upload(storeId=${store.id},id=${product.id})}"
+                                   class="btn px-1 py-0 btn-outline-secondary"
+                                   title="upload pictures for this product."
+                                >
+                                    <i data-feather="image"></i>
+                                </a>
                                 <a th:href="@{/admin/store/{storeId}/product/edit/{id}(storeId=${store.id},id=${product.id})}"
                                    class="btn px-1 py-0 btn-outline-secondary"
                                    title="Update this Product"
