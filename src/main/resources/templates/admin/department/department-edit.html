@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name" class="col-form-label">Department Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="department name">
+                                <input type="text" class="form-control" id="name" placeholder="department name" value="Dairy">
                                 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
 </div>
 <div th:replace="~{/admin/fragments/layout::scripts}"></div>
 <script>
-    $(".sidebar-sticky .nav-link").eq(3).addClass("active");
+    $(".sidebar-sticky .nav-link").eq(2).addClass("active");
 </script>
 </body>
 </html>
