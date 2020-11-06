@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://getbootstrap.com/docs/4.3/examples/dashboard/dashboard.css"/>
-    <link rel="stylesheet" href="../../../css/app.css">
+    <link rel="stylesheet" href="/css/app.css?v=111">
 </head>
 <body>
 <nav th:fragment="header" class="navbar navbar-expand navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -119,7 +119,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/admin/store/{id}/inventory(id=${store.id})}">
-                    <span data-feather="users"></span>
+                    <span data-feather="database"></span>
                     Inventory
                 </a>
             </li>

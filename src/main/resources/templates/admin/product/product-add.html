@@ -39,7 +39,7 @@
                                 <label for="state" class="col-form-label">Department</label>
                                 <select type="text" th:field="*{dept.id}" class="form-control" id="state" placeholder="Department">
                                     <option value="0">Select a department</option>
-                                    <option th:each="d:${departments}" th:value="${d.id}" th:text="${d.name}"></option>
+                                    <option th:each="d:${store.deptList}" th:value="${d.id}" th:text="${d.name}"></option>
                                 </select>
                                 <span th:if="${#fields.hasErrors('dept')}" th:errors="*{dept}" class="text-danger"></span>
                             </div>

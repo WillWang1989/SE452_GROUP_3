@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/admin/fragments/layout::style_meta"></div>
+    <title>Create a new Product</title>
+</head>
+<body>
+<div th:replace="~{/admin/fragments/layout::header}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{/admin/fragments/layout::sidebar_store}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2 pt-3 pb-2" th:text="${store.store_name}">Dashboard</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <span th:text="${store.street_address +', '+store.city+', '+store.state+', '+store.zip}"></span>
+                </div>
+            </div>
+            <div class="justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h4>
+                    <span th:text="${product.product_name}">
+                    </span>(
+                    <span th:text="${product.product_brand}">
+
+                    </span>)
+                </h4>
+                <h6>
+                    <span th:text="${product.product_description}"></span>
+                </h6>
+            </div>
+            <div class="row m-1">
+
+                <div class="col-12 p-0">
+                    <form method="POST" enctype="multipart/form-data"
+                          th:action="@{/admin/store/{storeId}/product/{id}/upload(storeId=${store.id},id=${product.id})}"
+                    >
+                        <div class="col-md-12 form-group p-0">
+                            <div class="pic border m-1 p-2 d-flex align-items-center justify-content-center"
+                                 id="uploader">
+                                <img style="max-height: 100%;max-width: 100%" id="preview"/>
+                            </div>
+                            <input type="file" id="file" name="file" class="d-none">
+                            <span th:if="${message}" th:text="${message}" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-12 p-1">
+                            <input type="submit" class="btn btn-sm btn-outline-secondary" value="Submit">
+                            <input type="button" class="btn btn-sm btn-outline-secondary" value="Back"
+                                   onclick="history.go(-1)">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row m-1" id="img-set">
+                <div th:each="img:${product.imgList}"
+                     class="pic border m-1 p-2 d-flex align-items-center justify-content-center position-relative"
+                >
+                    <span class="pos-btn">
+                        <a class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                   th:attr="data-target='#imgModel'+${img.id}">
+                            <i data-feather="zoom-in"></i>
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary"
+                           th:href="@{/admin/store/{storeId}/product/{id}/delimg/{imgId}(storeId=${store.id},id=${product.id},imgId=${img.id})}"
+                        >
+                            <i data-feather="trash-2"></i>
+                        </a>
+
+                        <div class="modal fade"
+                             th:attr="id='imgModel'+${img.id},aria-labelledby='exampleModalLabel'+${img.id}"
+                             tabindex="-1" role="dialog"
+                             aria-hidden="true"
+                        >
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" th:attr="id='exampleModalLabel'+${img.id}">Original Image</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img class="d-100 h-100"
+                                             th:src="${img.imgPath}">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </span>
+                    <img style="max-height: 100%;max-width: 100%"
+                         th:src="${img.imgPath}"
+                    />
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<div th:replace="~{/admin/fragments/layout::scripts}"></div>
+<script>
+    $(function () {
+        $(".sidebar-sticky .nav-link").eq(1).addClass("active");
+        $("#uploader").click(function () {
+            $("#file").click();
+        });
+        $('#file').change(function () {
+            $("#preview").attr("src", URL.createObjectURL(this.files[0]));
+            console.log(this);
+        })
+    })
+
+</script>
+</body>
+</html>

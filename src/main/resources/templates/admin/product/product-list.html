@@ -41,10 +41,10 @@
                 </div>
             </div>
             <div>
-                <div th:if="${#lists.isEmpty(products)}" class="row">
+                <div th:if="${#lists.isEmpty(store.prodList)}" class="row">
                     <h3 class="pl-3">No products yet!</h3>
                 </div>
-                <div th:if="${not #lists.isEmpty(products)}" class="table-responsive">
+                <div th:if="${not #lists.isEmpty(store.prodList)}" class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
                         <tr>
@@ -57,7 +57,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="product:${products}">
+                        <tr th:each="product:${store.prodList}">
                             <td th:text="${product.product_brand}">1,001</td>
                             <td th:text="${product.product_name}">1,001</td>
                             <td th:text="${product.product_description}">1,001</td>
@@ -69,6 +69,12 @@
                                    title="upload pictures for this product."
                                 >
                                     <i data-feather="image"></i>
+                                </a>
+                                <a th:href="@{/admin/store/{storeId}/inventory/{id}(storeId=${store.id},id=${product.id})}"
+                                   class="btn px-1 py-0 btn-outline-secondary"
+                                   title="upload inventory for this product."
+                                >
+                                    <i data-feather="database"></i>
                                 </a>
                                 <a th:href="@{/admin/store/{storeId}/product/edit/{id}(storeId=${store.id},id=${product.id})}"
                                    class="btn px-1 py-0 btn-outline-secondary"

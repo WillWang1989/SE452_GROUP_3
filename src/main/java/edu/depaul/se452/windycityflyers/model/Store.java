@@ -1,14 +1,10 @@
 package edu.depaul.se452.windycityflyers.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -33,4 +29,13 @@ public class Store {
     private String state;
     @Size(min = 5,max = 5)
     private String zip;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "store")
+    private List<Department> deptList;
+    @ToString.Exclude
+    @OneToMany(mappedBy = "store")
+    private List<Product> prodList;
+
+
 }

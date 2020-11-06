@@ -39,7 +39,7 @@ public class Order {
     private BigDecimal totalCost;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "order",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "order")
     private List<OrderProducts> products;
     // private BigDecimal shippingFee;
 }
