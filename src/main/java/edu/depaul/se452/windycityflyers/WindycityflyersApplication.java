@@ -114,7 +114,7 @@ public class WindycityflyersApplication {
 			log.info("-------------------------------");
 		};
 	}
-
+	//@Bean
 	public CommandLineRunner saveLogsReview(LogsRepository repository) {
 		return (args) -> {
 			log.info("begin of writing logs");
@@ -140,7 +140,6 @@ public class WindycityflyersApplication {
 			log2.setProtocol("HTTPS");
 			log2.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/85.0.4183.102");
 			log2.setHttpMethod("POST");
-			log2.setBody("username=admin&password=Passw0rd!");
 			log2.setContentType("application/x-www-form-urlencoded");
 			log2.setStatusCode("200");
 			log2.setRequestDate(LocalDateTime.now());
@@ -149,7 +148,7 @@ public class WindycityflyersApplication {
 		};
 	}
 
-	@Bean
+	//@Bean
 	public CommandLineRunner showLogsReview(LogsRepository repository) {
 		return (args) -> {
 			List<Logs> logs = repository.findAll();

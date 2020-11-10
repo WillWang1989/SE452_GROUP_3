@@ -3,6 +3,8 @@ package edu.depaul.se452.windycityflyers.service;
 import edu.depaul.se452.windycityflyers.model.Logs;
 import edu.depaul.se452.windycityflyers.repository.LogsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +15,16 @@ public class LogsServiceImpl implements LogsService {
     @Override
     public List<Logs> findAll() {
         return logsRepository.findAll();
+    }
+
+    @Override
+    public Page<Logs> findAll(Pageable pageable) {
+        return  logsRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Logs> findInAllFields(String q, Pageable pageable) {
+        return logsRepository.findInAllFields(q,pageable);
     }
 
     @Override

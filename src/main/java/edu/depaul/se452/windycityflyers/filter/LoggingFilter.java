@@ -31,9 +31,14 @@ public class LoggingFilter implements Filter {
         log1.setProtocol(req.getProtocol());
         log1.setUserAgent(req.getHeader("user-agent"));
         log1.setHttpMethod(req.getMethod());
+        log1.setContentType(res.getContentType());
         HashMap<String,String> cookies = new HashMap();
-        for (Cookie cookie : req.getCookies()) {
-            cookies.put(cookie.getName(),cookie.getValue());
+        Cookie [] list = req.getCookies();
+        if(list!=null){
+
+            for (Cookie cookie : list) {
+                cookies.put(cookie.getName(),cookie.getValue());
+            }
         }
         log1.setCookies(cookies);
         HashMap<String,String> headers = new HashMap<>();
@@ -47,6 +52,10 @@ public class LoggingFilter implements Filter {
         log1.setHeaders(headers);
         log1.setStatusCode(res.getStatus()+"");
         log1.setRequestDate(LocalDateTime.now());
+        // skip css and js request
+        if(log1.getUrl().endsWith(".css")||log1.getUrl().endsWith(".js"))
+            return;
+
         logsService.update(log1);
 
     }

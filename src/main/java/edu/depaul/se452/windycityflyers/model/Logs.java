@@ -18,7 +18,6 @@ public class Logs{
     @Id
     private String id;
     private String url;
-    private String body;
     private String contentType;
     private String httpMethod;
     private String statusCode;
