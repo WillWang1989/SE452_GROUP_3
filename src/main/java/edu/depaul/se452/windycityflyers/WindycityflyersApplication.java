@@ -1,6 +1,7 @@
 package edu.depaul.se452.windycityflyers;
 
 import edu.depaul.se452.windycityflyers.model.Logs;
+import edu.depaul.se452.windycityflyers.service.StorageService;
 import lombok.extern.java.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +10,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import edu.depaul.se452.windycityflyers.repository.*;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
+import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.core.convert.DbRefResolver;
+import org.springframework.data.mongodb.core.convert.DefaultDbRefResolver;
+import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
+import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -25,6 +32,20 @@ public class WindycityflyersApplication {
 	}
 
 	@Bean
+	CommandLineRunner initStorageService(StorageService storageService) {
+		return (args) -> {
+			storageService.init();
+		};
+	}
+	@Bean
+	public MappingMongoConverter mongoConverter(MongoDatabaseFactory mongoFactory, MongoMappingContext mongoMappingContext) {
+		DbRefResolver dbRefResolver = new DefaultDbRefResolver(mongoFactory);
+		MappingMongoConverter mongoConverter = new MappingMongoConverter(dbRefResolver, mongoMappingContext);
+		mongoConverter.setMapKeyDotReplacement("__DOT__");
+		return mongoConverter;
+	}
+
+	@Bean
 	public CommandLineRunner showProduct(ProductRepository repository) {
 		return (args) -> {
 			// fetch all Products
@@ -33,6 +54,9 @@ public class WindycityflyersApplication {
 			repository.findAll().forEach((product) -> {
 				log.info(product.toString());
 				log.info(product.getDept().getName());
+				product.getImgList().forEach((img->{
+					log.info(img.toString());
+				}));
 			});
 			log.info("-------------------------------");
 		};
@@ -90,7 +114,7 @@ public class WindycityflyersApplication {
 			log.info("-------------------------------");
 		};
 	}
-
+	//@Bean
 	public CommandLineRunner saveLogsReview(LogsRepository repository) {
 		return (args) -> {
 			log.info("begin of writing logs");
@@ -116,7 +140,6 @@ public class WindycityflyersApplication {
 			log2.setProtocol("HTTPS");
 			log2.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/85.0.4183.102");
 			log2.setHttpMethod("POST");
-			log2.setBody("username=admin&password=Passw0rd!");
 			log2.setContentType("application/x-www-form-urlencoded");
 			log2.setStatusCode("200");
 			log2.setRequestDate(LocalDateTime.now());
@@ -125,7 +148,7 @@ public class WindycityflyersApplication {
 		};
 	}
 
-	@Bean
+	//@Bean
 	public CommandLineRunner showLogsReview(LogsRepository repository) {
 		return (args) -> {
 			List<Logs> logs = repository.findAll();
@@ -151,4 +174,28 @@ public class WindycityflyersApplication {
 		};
 	}
 
+	@Bean
+	public CommandLineRunner showStore(StoreRepository repository) {
+		return (args) -> {
+			// fetch all Customers
+			log.info("List of Stores found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((it) -> {
+				log.info(it.toString());
+				log.info("List of department within store found with findAll():");
+				log.info("-------------------------------");
+				it.getDeptList().forEach((d)->{
+					log.info(d.toString());
+				});
+				log.info("-------------------------------");
+				log.info("List of products within store found with findAll():");
+				log.info("-------------------------------");
+				it.getProdList().forEach((d)->{
+					log.info(d.toString());
+				});
+				log.info("-------------------------------");
+			});
+			log.info("-------------------------------");
+		};
+	}
 }

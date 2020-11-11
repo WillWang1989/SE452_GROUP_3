@@ -27,13 +27,15 @@ public class DepartmentController {
     }
 
     @GetMapping("/add")
-    public String addStore(Model model) {
+    public String addDepartment(@PathVariable("storeId") String storeId,Model model) {
+        model.addAttribute("store",storeService.findById(storeId));
         model.addAttribute("department", new Department());
         return "admin/department/department-add";
     }
 
     @GetMapping("/edit")
-    public String editStore(Model model) {
+    public String editDepartment(@PathVariable("storeId") String storeId,Model model) {
+        model.addAttribute("store",storeService.findById(storeId));
         model.addAttribute("department", new Department());
         return "admin/department/department-edit";
     }

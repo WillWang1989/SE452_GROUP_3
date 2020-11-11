@@ -6,12 +6,13 @@ DROP TABLE IF EXISTS cart_products;
 DROP TABLE IF EXISTS shopping_cart;
 DROP TABLE IF EXISTS department;
 DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS product_img;
 DROP TABLE IF EXISTS runner;
 DROP TABLE IF EXISTS inventory;
 DROP TABLE IF EXISTS account_profiles;
-DROP TABLE IF EXISTS  admin;
-DROP TABLE IF EXISTS  payment;
-DROP TABLE IF EXISTS  store;
+DROP TABLE IF EXISTS admin;
+DROP TABLE IF EXISTS payment;
+DROP TABLE IF EXISTS store;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 
 CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
@@ -38,10 +39,11 @@ CREATE TABLE orders(
     order_status INTEGER ,
     payment_id serial,
     delivery_id serial,
-    total_cost money
+    total_cost money,
+    order_note varchar(200)
 );
 
-CREATE  TABLE  order_products (
+CREATE  TABLE order_products (
     id serial  PRIMARY KEY,
     order_id serial,
     product_id serial,
@@ -62,7 +64,8 @@ CREATE TABLE cart_products (
 
 CREATE TABLE department(
     id serial PRIMARY KEY,
-    name varchar(50)
+    name varchar(50),
+    store_id serial
 );
 CREATE TABLE product (
      id SERIAL PRIMARY KEY ,
@@ -70,18 +73,28 @@ CREATE TABLE product (
      product_name varchar(50),
      product_description varchar(150),
      dept_id SERIAL,
+     store_id SERIAL,
      price money
+);
+CREATE TABLE product_img(
+    id SERIAL PRIMARY KEY,
+    product_id serial,
+    img_path varchar(150),
+    img_desc varchar(200)
+
 );
 
 CREATE TABLE runner (
     id serial PRIMARY KEY,
     runner_name varchar(50),
-    runner_phone varchar(10)
+    runner_phone varchar(10),
+    password varchar(80)  NOT NULL
 );
 CREATE TABLE admin(
     id serial PRIMARY KEY,
     user_name varchar(50),
-    name varchar(100)
+    name varchar(100),
+    password varchar(80)  NOT NULL
 );
 
 CREATE TABLE inventory(
@@ -118,5 +131,5 @@ CREATE TABLE store (
     street_address VARCHAR(150),
     city VARCHAR(50),
     state VARCHAR(10),
-    zip integer
+    zip varchar(5)
 );

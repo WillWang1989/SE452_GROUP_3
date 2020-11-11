@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head >
     <div th:replace="/runner/fragments/layout::style_meta"></div>
-    <title>Orders waiting for delivery</title>
+    <title>Orders Waiting for Delivery</title>
 </head>
 <body>
 <div th:replace="~{/runner/fragments/layout::header}"></div>
@@ -11,180 +11,69 @@
     <div class="row">
         <div th:replace="~{/runner/fragments/layout::sidebar}"></div>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <h1 class="h2 pb-2 pt-3">Orders waiting for delivery</h1>
+            <h1 class="h2 pb-2 pt-3">Orders Waiting for Delivery</h1>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
+                        <th>Order Number</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
+                        <td>1</td>
+                        <td>Jackson</td>
+                        <td>Michael</td>
+                        <td>123 West Roscoe St, Chicago, IL 60657</td>
+                        <td>515-555-5678</td>
                         <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
+                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">Deliver this Order</a>
                         </td>
                     </tr>
                     <tr>
-                        <td>1,002</td>
-                        <td>amet</td>
-                        <td>consectetur</td>
-                        <td>adipiscing</td>
-                        <td>elit</td>
+                        <td>2</td>
+                        <td>Myers</td>
+                        <td>Michael</td>
+                        <td>1428 Elm St, Chicago, IL 60614</td>
+                        <td>310-555-6789</td>
                         <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
+                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">Deliver this Order</a>
                         </td>
                     </tr>
                     <tr>
-                        <td>1,003</td>
-                        <td>Integer</td>
-                        <td>nec</td>
-                        <td>odio</td>
-                        <td>Praesent</td>
+                        <td>3</td>
+                        <td>Kim</td>
+                        <td>Keller</td>
+                        <td>323 W Concord Pl, Chicago, IL 60614</td>
+                        <td>312-555-7888</td>
                         <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
+                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">Deliver this Order</a>
                         </td>
                     </tr>
                     <tr>
-                        <td>1,003</td>
-                        <td>libero</td>
-                        <td>Sed</td>
-                        <td>cursus</td>
-                        <td>ante</td>
+                        <td>4</td>
+                        <td>Aaron</td>
+                        <td>Rodgers</td>
+                        <td>2345 Michigan Ave, Chicago IL, 60612 </td>
+                        <td>312-555-9876</td>
                         <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
+                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">Deliver this Order</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>1,004</td>
-                        <td>dapibus</td>
-                        <td>diam</td>
-                        <td>Sed</td>
-                        <td>nisi</td>
+                        <td>5</td>
+                        <td>Jessica</td>
+                        <td>Johnson</td>
+                        <td>4567 N Wells St, Chicago, IL 60614</td>
+                        <td>312-555-5432</td>
                         <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
+                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">Deliver this Order</a>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>1,005</td>
-                        <td>Nulla</td>
-                        <td>quis</td>
-                        <td>sem</td>
-                        <td>at</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,006</td>
-                        <td>nibh</td>
-                        <td>elementum</td>
-                        <td>imperdiet</td>
-                        <td>Duis</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,007</td>
-                        <td>sagittis</td>
-                        <td>ipsum</td>
-                        <td>Praesent</td>
-                        <td>mauris</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,008</td>
-                        <td>Fusce</td>
-                        <td>nec</td>
-                        <td>tellus</td>
-                        <td>sed</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,009</td>
-                        <td>augue</td>
-                        <td>semper</td>
-                        <td>porta</td>
-                        <td>Mauris</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,010</td>
-                        <td>massa</td>
-                        <td>Vestibulum</td>
-                        <td>lacinia</td>
-                        <td>arcu</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,011</td>
-                        <td>eget</td>
-                        <td>nulla</td>
-                        <td>Class</td>
-                        <td>aptent</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,012</td>
-                        <td>taciti</td>
-                        <td>sociosqu</td>
-                        <td>ad</td>
-                        <td>litora</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,013</td>
-                        <td>torquent</td>
-                        <td>per</td>
-                        <td>conubia</td>
-                        <td>nostra</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,014</td>
-                        <td>per</td>
-                        <td>inceptos</td>
-                        <td>himenaeos</td>
-                        <td>Curabitur</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1,015</td>
-                        <td>sodales</td>
-                        <td>ligula</td>
-                        <td>in</td>
-                        <td>libero</td>
-                        <td>
-                            <a class="btn btn-sm btn-outline-secondary ml-2" href="#">deliver this order</a>
-                        </td>
-                    </tr>
+
                     </tbody>
                 </table>
             </div>

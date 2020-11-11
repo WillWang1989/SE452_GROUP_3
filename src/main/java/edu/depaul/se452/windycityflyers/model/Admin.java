@@ -15,5 +15,6 @@ public class Admin {
     private long id;
     private String user_name;
     private String name;
+    private String password;
 
 }

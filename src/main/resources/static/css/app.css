@@ -29,3 +29,33 @@
 .content{
     max-width:1360px
 }
+.pic {
+    width: 240px;
+    height: 240px;
+}
+
+.pic .pos-btn{
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+}
+
+/*** begin override bootstrap modal csss */
+
+body .modal-dialog { /* Width */
+    max-width: 100%;
+    width: auto !important;
+    display: inline-block;
+}
+.modal.show {
+    z-index: -1;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-open .modal {
+    z-index: 1050;
+}
+
+/*** end override bootstrap modal csss */

@@ -1,1 +1,7 @@
 datatype of 'zip' field on 'store' table changed to varchar(5)
+add 'order_note' to 'order' table
+add table 'product_img'
+add 'store_id' to 'product' table
+add 'store_id' to 'department' table
+add 'password' to 'admin' table
+add 'password' to 'runner' table

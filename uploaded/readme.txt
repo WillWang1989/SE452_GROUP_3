@@ -1,0 +1,1 @@
+a folder for uploaded images of products

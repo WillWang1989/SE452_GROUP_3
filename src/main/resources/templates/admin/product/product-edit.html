@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/admin/fragments/layout::style_meta"></div>
+    <title>Update Product Information</title>
+</head>
+<body>
+<div th:replace="~{/admin/fragments/layout::header}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{/admin/fragments/layout::sidebar_store}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2 pt-3 pb-2" th:text="${store.store_name}">Dashboard</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <span th:text="${store.street_address +', '+store.city+', '+store.state+', '+store.zip}"></span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                <h2>Update Product</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="#"
+                      th:action="@{/admin/store/{storeId}/product/edit(storeId=${store.id})}"
+                      th:object="${product}" method="post"
+                    >
+                        <input type="hidden" th:field="*{id}">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="brand" class="col-form-label">Product Brand</label>
+                                <input type="text" th:field="*{product_brand}" class="form-control" id="brand" placeholder="Product Brand">
+                                <span th:if="${#fields.hasErrors('product_brand')}" th:errors="*{product_brand}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="product name" class="col-form-label">Product Name</label>
+                                <input type="text" th:field="*{product_name}" class="form-control" id="product name" placeholder="Product Name">
+                                <span th:if="${#fields.hasErrors('product_name')}" th:errors="*{product_name}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="state" class="col-form-label">Department</label>
+                                <select type="text" th:field="*{dept.id}" class="form-control" id="state" placeholder="Department">
+                                    <option value="0">Select a department</option>
+                                    <option th:each="d:${store.deptList}" th:value="${d.id}" th:text="${d.name}"></option>
+                                </select>
+                                <span th:if="${#fields.hasErrors('dept')}" th:errors="*{dept}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="price" class="col-form-label">Price</label>
+                                <input type="text" th:field="*{price}" class="form-control" id="price" placeholder="Price">
+                                <span th:if="${#fields.hasErrors('Price')}" th:errors="*{price}" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label for="description" class="col-form-label">Product Description</label>
+                                <textarea type="text" th:field="*{product_description}" class="form-control" id="description" placeholder="Product Description">
+                                </textarea>
+                                <span th:if="${#fields.hasErrors('product_description')}" th:errors="*{product_description}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-5">
+                                <input type="submit" class="btn btn-sm btn-outline-secondary" value="Update">
+                                <input type="button" class="btn btn-sm btn-outline-secondary" value="Back" onclick="history.go(-1)">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<div th:replace="~{/admin/fragments/layout::scripts}"></div>
+<script>
+    $(".sidebar-sticky .nav-link").eq(1).addClass("active");
+</script>
+</body>
+</html>

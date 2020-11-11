@@ -1,13 +1,18 @@
-INSERT INTO Runner (runner_name, runner_phone) VALUES
-            ('Roxxy Andrews', 3122241234),
-            ('RuPaul Charles', 3122341234),
-            ('Bianca Del Rio', 7732241234);
-INSERT INTO Department (id,name) VALUES
-            (101,'Protein'),
-            (102,'Dairy'),
-            (103,'Fruit'),
-            (104,'Vegetables'),
-            (105,'Grains');
+INSERT INTO Runner (runner_name, runner_phone,password) VALUES
+            ('Roxxy Andrews', 3122241234,'$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('RuPaul Charles', 3122341234,'$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('Bianca Del Rio', 7732241234,'$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('runner01', 7732241234,'$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW');
+INSERT INTO Department (id,name,store_id) VALUES
+            (101,'Protein',1),
+            (102,'Dairy',1),
+            (103,'Fruit',1),
+            (104,'Vegetables',1),
+            (105,'Grains',1),
+            (106,'Protein',2),
+            (107,'Dairy',2),
+            (108,'Fruit',2),
+            (109,'Vegetables',2);
 
 INSERT INTO account_profiles (firstname, lastname, email, address, payment, phone) VALUES
             ('Roxxy', 'Andrews', 'RoxxyDrag@aol.com', '1234 Main Street', '1236256554788956', 1235218475),
@@ -33,18 +38,32 @@ INSERT INTO store(id, store_name, street_address, city, state, zip) VALUES
 --             (1, 3, 4),
 --             (2, 2, 4)
 */
-INSERT INTO product(product_brand,product_name, product_description, dept_id, price) VALUES
-            ('Skippy', 'Peanut Butter', 'smooth peanut butter', 101, 5.99),
-            ('Perdue', 'Chicken Breast', 'organic',  101, 7.99),
-            ('Fuji', 'Apple', 'large',  101, 2.99),
-            ('Green Giant', 'Broccoli', 'florets',  102, 1.99),
-            ('Jewel', 'Milk', 'whole',  103, 1.99);
+INSERT INTO product(product_brand,product_name, product_description, dept_id, price,store_id) VALUES
+            ('Skippy', 'Peanut Butter', 'smooth peanut butter', 101, 5.99,1),
+            ('Perdue', 'Chicken Breast', 'organic',  101, 7.99,1),
+            ('Fuji', 'Apple', 'large',  101, 2.99,1),
+            ('Green Giant', 'Broccoli', 'florets',  102, 1.99,1),
+            ('Jewel', 'Milk', 'whole',  103, 1.99,1),
+            ('Skippy', 'Peanut Butter', 'smooth peanut butter', 101, 5.99,2),
+            ('Perdue', 'Chicken Breast', 'organic',  101, 7.99,2),
+            ('Fuji', 'Apple', 'large',  101, 2.99,2),
+            ('Green Giant', 'Broccoli', 'florets',  102, 1.99,2),
+            ('Jewel', 'Milk', 'whole',  103, 1.99,2);
+INSERT INTO product_img(id,product_id,img_path,img_desc) VALUES
+            (default,1,'/uploaded/1.jpg',''),
+            (default,1,'/uploaded/1.jpg',''),
+            (default,1,'/uploaded/1.jpg',''),
+            (default,2,'/uploaded/1.jpg',''),
+            (default,2,'/uploaded/1.jpg',''),
+            (default,3,'/uploaded/1.jpg','');
 
-INSERT INTO admin(user_name, name) VALUES
-            ('jsmith', 'John Smith'),
-            ('jdoe', 'Jane Doe'),
-            ('dmill','David Miller'),
-            ('ssanders', 'Sarah Sanders');
+INSERT INTO admin(user_name, name,password) VALUES
+            ('admin01','admin01','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('jsmith', 'John Smith','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('jdoe', 'Jane Doe','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('dmill','David Miller','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+
+            ('ssanders', 'Sarah Sanders','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW');
 
 
 

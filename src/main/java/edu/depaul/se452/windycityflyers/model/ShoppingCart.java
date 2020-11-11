@@ -22,7 +22,7 @@ public class ShoppingCart {
     @JoinColumn(name = "customer_id")
     private Customer customer;
     @ToString.Exclude
-    @OneToMany(mappedBy = "cart",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "cart")
     private List<CartProducts> products;
     private BigDecimal totalCost;
 }

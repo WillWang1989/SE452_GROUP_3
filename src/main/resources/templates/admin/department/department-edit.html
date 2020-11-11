@@ -12,7 +12,13 @@
         <div th:replace="~{/admin/fragments/layout::sidebar_store}"></div>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2 pt-3 pb-2" th:text="${store.store_name}">Dashboard</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <span th:text="${store.street_address +', '+store.city+', '+store.state+', '+store.zip}"></span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                 <h2>update Department</h2>
             </div>
             <div class="row">
@@ -22,7 +28,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name" class="col-form-label">Department Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="department name">
+                                <input type="text" class="form-control" id="name" placeholder="department name" value="Dairy">
                                 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
                             </div>
                         </div>
@@ -43,7 +49,7 @@
 </div>
 <div th:replace="~{/admin/fragments/layout::scripts}"></div>
 <script>
-    $(".sidebar-sticky .nav-link").eq(3).addClass("active");
+    $(".sidebar-sticky .nav-link").eq(2).addClass("active");
 </script>
 </body>
 </html>
