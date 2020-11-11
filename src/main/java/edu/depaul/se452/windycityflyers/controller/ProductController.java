@@ -54,15 +54,15 @@ public class ProductController {
     @PostMapping("/add")
     public String addStoreProduct(@PathVariable("storeId") String storeId,
                                   @Valid Product product, BindingResult result, Model model) {
-        model.addAttribute("store", storeService.findById(storeId));
+        Store store = storeService.findById(storeId);
+        model.addAttribute("store",store);
         if (product.getDept().getId() == 0) {
             result.rejectValue("dept", null, "your must select one department");
         }
         if (result.hasErrors()) {
             return "admin/product/product-add";
         }
-
-
+        product.setStore(store);
         productService.update(product);
         model.addAttribute("products", productService.findAll());
         return "redirect:/admin/store/" + storeId + "/product";
@@ -81,7 +81,8 @@ public class ProductController {
     @PostMapping("/edit")
     public String updateProductPost(@PathVariable("storeId") String storeId,
                                     @Valid Product product, BindingResult result, Model model) {
-        model.addAttribute("store", storeService.findById(storeId));
+        Store store =storeService.findById(storeId);
+        model.addAttribute("store",store );
         model.addAttribute("departments", departmentService.findAll());
         if (product.getDept().getId() == 0) {
             result.rejectValue("dept", null, "your must select one department");
@@ -89,6 +90,7 @@ public class ProductController {
         if (result.hasErrors()) {
             return "/admin/product/product-edit";
         }
+        product.setStore(store);
         productService.update(product);
         model.addAttribute("products", productService.findAll());
         return "redirect:/admin/store/" + storeId + "/product";

@@ -36,6 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter implemen
             .authorizeRequests()
             .antMatchers(
                     "/registration**",
+                    "/access-denied**",
                     //"/**", // for testing
                     "/js/**",
                     "/css/**",
