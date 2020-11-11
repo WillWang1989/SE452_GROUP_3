@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>access denied</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container mt-5">
+        <h1 class="display-4">Access Denied</h1>
+        <p class="lead" th:text="${message}">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <p>note: if you don't want see this page, un-comment line 43 in SecurityConfiguration.java file</p>
+    </div>
+</div>
+</body>
+</html>

@@ -17,6 +17,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
 
+    @Autowired
+    private LoggingAccessDeniedHandler accessDeniedHandler;
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
@@ -36,8 +38,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter implemen
             .authorizeRequests()
             .antMatchers(
                     "/registration**",
-                    "/access-denied**",
-                    //"/**", // for testing
+                    "/accessdenied**",
+//                     "/**", // for testing
                     "/js/**",
                     "/css/**",
                     "/img/**")
@@ -56,7 +58,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter implemen
             .clearAuthentication(true)
             .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
             .logoutSuccessUrl("/login?logout")
-            .permitAll();
+            .permitAll()
+            .and()
+            .exceptionHandling()
+            .accessDeniedHandler(accessDeniedHandler);
     }
 
 

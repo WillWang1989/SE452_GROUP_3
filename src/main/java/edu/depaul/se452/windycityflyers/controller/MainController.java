@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
@@ -50,4 +51,21 @@ public class MainController {
     @GetMapping("/runner/")
     public String runnerIndex() {
         return "runner/index";
+    }
+
+    @GetMapping("/accessdenied")
+    public String accessDenied(@RequestParam("t") String url,Model model) {
+        String msgTmpl = "%s was trying to access protected resource that is only available to %s";
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String role = "USER";
+        if(url.toLowerCase().startsWith("/admin")){
+            role = "ADMIN";
+        }else if(url.toLowerCase().startsWith("/runner")){
+            role = "RUNNER";
+        }else if(url.toLowerCase().startsWith("/customer")) {
+            role = "CUSTOMER";
+        }
+        String msg = String.format(msgTmpl,auth.getName(),role);
+        model.addAttribute("message",msg);
+        return "access-denied";
     }}
