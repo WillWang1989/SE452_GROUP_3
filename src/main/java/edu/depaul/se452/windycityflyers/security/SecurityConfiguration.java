@@ -39,11 +39,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter implemen
             .authorizeRequests()
             .antMatchers(
                     "/registration**",
-                    "/**", // for testing
+                    //"/**", // for testing
                     "/js/**",
                     "/css/**",
                     "/img/**")
             .permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/customer/**").hasRole("CUSTOMER")
+                .antMatchers("/runner/**").hasRole("RUNNER")
             .anyRequest().authenticated()
             .and()
             .formLogin()

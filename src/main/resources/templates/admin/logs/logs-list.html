@@ -127,7 +127,7 @@
                             <ul class="pagination">
                                 <li class="page-item">
                                     <a class="page-link text-secondary" th:href="@{/admin/logs/(q=${q})}" aria-label="Previous" title="first page">
-                                        <span aria-hidden="true">&laquo;</span>
+                                        <span aria-hidden="true"> <i data-feather="chevrons-left"></i></span>
                                     </a>
                                 </li>
                                 <li class="page-item">
@@ -136,7 +136,7 @@
                                        th:href="@{/admin/logs/(page=${(logs.pageable.pageNumber)==0?1:(logs.pageable.pageNumber)},q=${q})}"
                                        title="previous page"
                                     >
-                                        <span aria-hidden="true">&lt;</span>
+                                        <span aria-hidden="true"> <i data-feather="chevron-left"></i></span>
                                     </a>
                                 </li>
                                 <li th:if="${(logs.pageable.pageNumber)>2}" class="page-item">
@@ -190,7 +190,7 @@
                                         class="page-link text-secondary" href="#"
                                         title="next page"
                                     >
-                                        <span aria-hidden="true"> &gt; </span>
+                                        <span aria-hidden="true"> <i data-feather="chevron-right"></i> </span>
                                     </a>
                                 </li>
                                 <li class="page-item">
@@ -199,7 +199,7 @@
                                         class="page-link text-secondary" href="#" aria-label="Next"
                                         title="last page"
                                     >
-                                        <span aria-hidden="true">&raquo;</span>
+                                        <span aria-hidden="true"><i data-feather="chevrons-right"></i></span>
                                     </a>
                                 </li>
                             </ul>

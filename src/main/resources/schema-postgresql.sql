@@ -87,12 +87,14 @@ CREATE TABLE product_img(
 CREATE TABLE runner (
     id serial PRIMARY KEY,
     runner_name varchar(50),
-    runner_phone varchar(10)
+    runner_phone varchar(10),
+    password varchar(80)  NOT NULL
 );
 CREATE TABLE admin(
     id serial PRIMARY KEY,
     user_name varchar(50),
-    name varchar(100)
+    name varchar(100),
+    password varchar(80)  NOT NULL
 );
 
 CREATE TABLE inventory(

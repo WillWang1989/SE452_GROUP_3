@@ -1,7 +1,8 @@
-INSERT INTO Runner (runner_name, runner_phone) VALUES
-            ('Roxxy Andrews', 3122241234),
-            ('RuPaul Charles', 3122341234),
-            ('Bianca Del Rio', 7732241234);
+INSERT INTO Runner (runner_name, runner_phone,password) VALUES
+            ('Roxxy Andrews', 3122241234,'$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('RuPaul Charles', 3122341234,'$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('Bianca Del Rio', 7732241234,'$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('runner01', 7732241234,'$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW');
 INSERT INTO Department (id,name,store_id) VALUES
             (101,'Protein',1),
             (102,'Dairy',1),
@@ -56,11 +57,13 @@ INSERT INTO product_img(id,product_id,img_path,img_desc) VALUES
             (default,2,'/uploaded/1.jpg',''),
             (default,3,'/uploaded/1.jpg','');
 
-INSERT INTO admin(user_name, name) VALUES
-            ('jsmith', 'John Smith'),
-            ('jdoe', 'Jane Doe'),
-            ('dmill','David Miller'),
-            ('ssanders', 'Sarah Sanders');
+INSERT INTO admin(user_name, name,password) VALUES
+            ('admin01','admin01','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('jsmith', 'John Smith','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('jdoe', 'Jane Doe','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+            ('dmill','David Miller','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW'),
+
+            ('ssanders', 'Sarah Sanders','$2a$10$9Hrj/lFS8tZpZH2FU7MO7eHg4LJ4Kewarv2iuYPLFE1WqauDlcHeW');
 
 
 

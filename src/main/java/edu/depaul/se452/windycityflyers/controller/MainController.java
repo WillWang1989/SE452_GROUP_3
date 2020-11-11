@@ -1,5 +1,9 @@
 package edu.depaul.se452.windycityflyers.controller;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +15,17 @@ public class MainController {
 
     @GetMapping("/")
     public String root() {
-        return "index";
+        Authentication auth= SecurityContextHolder.getContext().getAuthentication();
+        String ret ="index";
+        GrantedAuthority authority = auth.getAuthorities().stream().findFirst().get();
+        if("ROLE_ADMIN".equals(authority.getAuthority())){
+            ret = "redirect:/admin/";
+        }else if("ROLE_RUNNER".equals(authority.getAuthority())){
+            ret = "redirect:/runner/";
+        }else if("ROLE_CUSTOMER".equals(authority.getAuthority())){
+            ret = "redirect:/customer/";
+        }
+        return ret;
     }
 
     @GetMapping("/customer/")
