@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Controller
 public class MainController {
@@ -54,10 +55,11 @@ public class MainController {
     }
 
     @GetMapping("/accessdenied")
-    public String accessDenied(@RequestParam("t") String url,Model model) {
+    public String accessDenied(@RequestParam("t") Optional<String> url_t, Model model) {
         String msgTmpl = "%s was trying to access protected resource that is only available to %s";
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String role = "USER";
+        String url = url_t.orElse("");
         if(url.toLowerCase().startsWith("/admin")){
             role = "ADMIN";
         }else if(url.toLowerCase().startsWith("/runner")){
