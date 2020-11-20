@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="/css/app.css?v=11111">
+    <title>Shopping Cart - Grocery Runner</title>
+</head>
+<body>
+<div class="alert alert-success alert-dismissible fade show text-center fixed-bottom" style="display: none" role="alert">
+    You shopping cart has been updated.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="row w-100 main">
+        <div class="col-2">
+            <span class="navbar-brand"><a href="/customer/" class="text-decoration-none">Grocery Runner</a></span>
+        </div>
+        <div class="col-7 text-center">
+            <form class="form-inline d-inline-block my-lg-0 w-100" action="/customer/" method="get">
+                <input th:value="${param.sid}" type="hidden" name="sid" id="sid">
+                <button
+                        id="store_name"
+                        type="button"
+                        class="btn btn-outline-success half-circle-left rounded-right-0 dropdown-toggle mr-n1"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                >
+                    Stores
+                </button>
+                <div id="store_menu" class="dropdown-menu">
+                    <a class="dropdown-item text-center" href="#">All Stores</a>
+                    <a
+                            th:each="s:${stores}"
+                            th:value="${s.id}"
+                            th:text="${s.store_name}"
+                            th:title="${s.street_address +', '+s.city+', '+s.state+', '+s.zip}"
+                            class="dropdown-item text-center" href="#"
+                    >
+                        Protein
+                    </a>
+                </div>
+                <input
+                        th:value="${param.q}"
+                        name="q"
+                        id="q"
+                        class="form-control w-75 is-valid bg-none rounded-0 border-right-0 border-left-0 "
+                        type="search" placeholder="Search" aria-label="Search"
+                />
+                <button class="btn btn-outline-success ml-n1 half-circle-right rounded-left-0" type="submit">Search
+                </button>
+            </form>
+        </div>
+        <div class="col-3 text-right pt-2">
+            <a href="/customer/cart" class="d-inline-block text-decoration-none text-body">
+                Shopping Cart
+                <span th:text="${cart.getTotalProducts()}" th:classappend="${cart.getTotalProducts()==0}? 'd-none'" class="ml-1 badge badge-success">100</span>
+                <i data-feather="shopping-cart"></i>
+
+            </a>
+            <a class="d-inline-block ml-3 text-body text-decoration-none dropdown-toggle" id="profile"  data-toggle="dropdown">
+                <span sec:authentication="principal.username">Account</span><i data-feather="user"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right m-n2">
+                <a class="dropdown-item text-center" href="#">My Orders</a>
+                <a class="dropdown-item text-center" href="#">Profile</a>
+                <a class="dropdown-item text-center" href="/logout">Sign Out</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid content">
+
+    <div th:if="${cart.getTotalProducts()==0}" class="jumbotron jumbotron-fluid bg-light mt-5">
+        <div class="container">
+            <h1 class="display-4">Your shopping cart is empty! </h1>
+            <p class="lead">Please select some items <a href="/customer/">here</a></p>
+        </div>
+    </div>
+    <div th:if="${cart.getTotalProducts()>0}" class="row border-bottom border-top mt-5">
+        <div class="col-8">
+            <div th:each="cp:${cart.getProducts()}" class="row w-100 py-3 px-0 mx-0 border-bottom">
+                <div class="col-2">
+                    <img
+                            th:src="${cp.product.getDefaultImage()}"
+                            class="product-img border"
+                            src="https://i5.walmartimages.com/asr/718354e5-0ec8-434e-8abc-794174974b3e_1.4ccf469a23e968b9c8f1d1cbc1e6b4c2.jpeg?odnWidth=100&odnHeight=100&odnBg=ffffff">
+                </div>
+                <div class="col-6">
+                    <a th:href="@{/customer/product/{pid}(pid=${cp.product.id})}">
+                        <p>
+                            <span th:text="${cp.product.product_name}"> Dunkin' Original Blend, Medium Roast Coffee, 30-Ounce Canister (Packaging May Vary)</span>
+                            (<span th:text="${cp.product.product_brand}"> brand name</span>)
+                        </p>
+                    </a>
+                    <p th:text="${cp.product.product_description}">
+
+                    </p>
+                </div>
+                <div class="col-2">
+                    Qty:<input th:attr="pid=${cp.product.id},cpid=${cp.id}" th:value="${cp.count}" class="w-100 form-control" type="number" value="5">
+                </div>
+                <div class="col-2 text-right">
+                    <p>$<span th:text="${cp.product.price}"></span>/each</p>
+                    <p>$<span th:text="${cp.product.price * cp.count  }"></span>/subtotal</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="row p-2">
+                <div class="col text-left">Subtotal(<span id="p_n" th:text="${cart.totalProducts}">4</span> items)</div>
+                <div class="col text-right">$<span id="total1" th:text="${cart.totalCost}">53.74</span></div>
+            </div>
+            <div class="row p-2">
+                <div class="col text-left">Delivery</div>
+                <div class="col text-right">Free</div>
+            </div>
+            <div class="row p-2 border-bottom">
+                <div class="col text-left">Taxes and fees</div>
+                <div class="col text-right"><span>$0.00</span></div>
+            </div>
+            <div class="row p-2">
+                <div class="col text-left">
+                    Total
+                </div>
+                <div class="col text-right">
+                    $<span id="total2" th:text="${cart.totalCost}">53.74</span>
+                </div>
+
+            </div>
+            <div  class="row p-2">
+                <div class="col w-100 text-center">
+                    <input type="button" class="btn btn-success w-75 half-circle-left half-circle-right" value="Check Out">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script>
+    feather.replace()
+    $(function () {
+
+        $("#store_menu .dropdown-item").click(function (){
+            var self =$(this);
+            $("#sid").val(self.attr('value'));
+            $("#store_name").text(self.text());
+            $("#store_name").attr('title',self.attr('title'));
+        });
+
+        $(":input[type=number]").change(function (){
+            const json = {"id":0,"product": {"id": 22},"count":1};
+            const el = $(this)
+            json.id = el.attr("cpid");
+            json.product.id=el.attr("pid");
+            json.count = el.val();
+            $.ajax({
+                url:"/api/customer/cart/update",
+                data:JSON.stringify(json),
+                type:"POST",
+                contentType: "application/json"
+            }).done(function (d){
+                if(d==null) return ;
+                $(".badge").text(d.totalProducts);
+                $("#p_n").text(d.totalProducts);
+                $("#total1,#total2").text(d.totalCost);
+                var subtotal = d.products.filter(function (it){
+                    return it.product.id == json.product.id;
+                })[0];
+                el.parent().next().find("span").eq(1).text((subtotal.product.price*subtotal.count).toFixed(2));
+                $(".alert").show( "slow" );
+                if(el.val()=="0"){
+                    el.parents(".row.w-100").remove();
+                }
+                if(d.totalProducts==0){
+                    location.reload()
+                }
+                console.log(d);
+                setTimeout(function (){
+                    $(".alert").hide( "slow" );
+                },1500);
+            }).fail(function (){
+                console.log("failed");
+            })
+
+        });
+
+
+    })
+</script>
+</body>
+</html>

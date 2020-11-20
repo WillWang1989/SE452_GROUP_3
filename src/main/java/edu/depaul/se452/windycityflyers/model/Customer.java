@@ -1,5 +1,6 @@
 package edu.depaul.se452.windycityflyers.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,6 +29,7 @@ public class Customer {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime dob;
     // user may not want to register
+    @JsonIgnore
     private String password;
     @Column(name="tel_no")
     private String telNo;

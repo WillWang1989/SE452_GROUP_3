@@ -21,6 +21,11 @@ public class CustomerServiceImpl implements CustomerService {
         return userRepository.findByEmail(email);
     }
 
+    @Override
+    public Customer findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
     public Customer save(CustomerRegistrationDto registration) {
         Customer user = new Customer();
         user.setFirstname(registration.getFirstName());

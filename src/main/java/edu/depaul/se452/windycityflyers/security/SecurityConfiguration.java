@@ -48,7 +48,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter implemen
                 .antMatchers("/customer/**").hasRole("CUSTOMER")
                 .antMatchers("/runner/**").hasRole("RUNNER")
             .anyRequest().authenticated()
-            .and()
+            .and().csrf().ignoringAntMatchers("/api/**").
+             and()
             .formLogin()
             .loginPage("/login")
             .permitAll()

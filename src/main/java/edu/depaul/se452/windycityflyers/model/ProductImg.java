@@ -1,8 +1,10 @@
 package edu.depaul.se452.windycityflyers.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -16,6 +18,8 @@ public class ProductImg {
     @GeneratedValue
     private long id;
     @ManyToOne
+    @JsonIgnore
+    @ToString.Exclude
     @JoinColumn(name = "product_id")
     private Product prod;
     @Column(name = "img_path")

@@ -4,6 +4,6 @@ import edu.depaul.se452.windycityflyers.model.Customer;
 public interface CustomerService  {
 
     Customer findByEmail(String email);
-
+    Customer findByUsername(String username);
     Customer save(CustomerRegistrationDto registration);
 }

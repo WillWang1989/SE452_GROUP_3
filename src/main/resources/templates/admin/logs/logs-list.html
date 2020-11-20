@@ -38,7 +38,7 @@
                     <div>
                         <span th:text="${logs.pageable.pageNumber*logs.pageable.pageSize+1 }"></span>
                         -
-                        <span th:text="${(logs.pageable.pageNumber+1)*logs.pageable.pageSize>logs.totalElements ? logs.totalElements:(logs.pageable.pageNumber+1)*logs.pageable.pageSize }"></span>
+                        <span th:text="${(logs.pageable.pageNumber+1)*logs.pageable.pageSize > logs.totalElements ? logs.totalElements:(logs.pageable.pageNumber+1)*logs.pageable.pageSize }"></span>
                         <span>&nbsp;of&nbsp;</span>
                         <span th:text="${logs.totalElements }"></span>
                     </div>
@@ -126,7 +126,7 @@
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
                                 <li class="page-item">
-                                    <a class="page-link text-secondary" th:href="@{/admin/logs/(q=${q})}" aria-label="Previous" title="first page">
+                                    <a class="page-link text-secondary" th:href="@{/admin/logs/(q=${q})}" aria-label="first page" title="first page">
                                         <span aria-hidden="true"> <i data-feather="chevrons-left"></i></span>
                                     </a>
                                 </li>

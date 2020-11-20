@@ -1,6 +1,7 @@
 package edu.depaul.se452.windycityflyers.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 
@@ -17,6 +18,7 @@ public class Runner {
     private String name;
     @Column(name = "runner_phone")
     private String phone;
+    @JsonIgnore
     private String password;
 
 }

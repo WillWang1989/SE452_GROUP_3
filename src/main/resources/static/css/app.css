@@ -26,6 +26,10 @@
 .main svg.feather{
     stroke:#28a745;
 }
+.feather-16{
+    height: 16px;
+    width: 16px;
+}
 .content{
     max-width:1360px
 }
@@ -59,3 +63,28 @@ body .modal-dialog { /* Width */
 }
 
 /*** end override bootstrap modal csss */
+
+
+
+.product-item{
+    width: 208px;
+    height: 340px;
+}
+.product-name{
+    height: 48px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+}
+.product-price{
+    height: 24px;
+}
+.product-img{
+    height: 120px;
+    width: 120px;
+}
+
+a#profile:hover + .dropdown-menu,a#profile + .dropdown-menu:hover{
+    display: block;
+}
